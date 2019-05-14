@@ -13,6 +13,7 @@ br\DevBros\Noobies\Funcionario\Funcionario.class
 br\DevBros\Noobies\Produtos\EditarProdutoServlet.class
 br\DevBros\Noobies\Funcionario\AtualizarFuncionariosServlet.class
 br\DevBros\Noobies\Produtos\ExcluirProdutoServlet.class
+br\DevBros\Noobies\Vendas\PesquisarProdutoVendasServlet.class
 br\DevBros\Noobies\Clientes\ClienteDAO.class
 br\DevBros\Noobies\Clientes\ExcluirClienteServlet.class
 br\DevBros\Noobies\Clientes\ConsultarClienteServlet.class

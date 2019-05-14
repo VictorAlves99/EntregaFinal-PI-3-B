@@ -209,6 +209,53 @@ public class ProdutoDAO {
         return lista;
     }
     
+    public static List<Produto> pesquisarProduto(int pesquisa){
+        List<Produto> lista = new ArrayList<>();
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        
+        String sql = "SELECT * FROM tb_produtos WHERE COD_PRODUTO = "+pesquisa+";";
+                
+        try {
+            conn = obterConexao();
+            stmt = conn.prepareStatement(sql);
+
+            ResultSet rs = stmt.executeQuery();
+            
+
+            while(rs.next()){
+                Produto prod = new Produto();
+                prod.setCodProduto(rs.getInt("COD_PRODUTO"));
+                prod.setNomeProd(rs.getString("NOME_PRODUTO"));
+                prod.setValorCompra(rs.getDouble("VALOR_COMPRA"));
+                prod.setValorVenda(rs.getDouble("VALOR_VENDA"));
+                prod.setQuantidade(rs.getInt("QUANTIDADE"));
+                prod.setCategoria(rs.getString("CATEGORIA"));
+                
+                lista.add(prod);
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Não foi possível executar" + e);
+        } finally{
+            if(stmt != null){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+            if(conn != null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+        }
+        
+        return lista;
+    }
+    
     public static List<Produto> listarProdutos(){
         List<Produto> lista = new ArrayList<>();
         PreparedStatement stmt = null;
