@@ -16,10 +16,9 @@ public class ClienteDAO {
         Connection conn = null;
         
         boolean linhasAfetadas = false;
-        
-        String sql = "INSERT INTO tb_clientes (NOME_CLIENTE, CPF_CLIENTE, TELEFONE_CLIENTE, EMAIL_CLIENTE)"
-                     + "VALUES(?,?,?,?)";
-        
+          
+        String sql = "INSERT INTO TB_CLIENTES(NOME_CLIENTE, CPF_CLIENTE, TELEFONE_CLIENTE, EMAIL_CLIENTE) VALUES(?, ?, ?, ?)";
+    
         try {
             conn = obterConexao();
             stmt = conn.prepareStatement(sql);
@@ -140,12 +139,14 @@ public class ClienteDAO {
         return verdade;
     }
     //pesquisa de cliente
-    public static List<Cliente> pesquisarCliente(String pesquisa){
+    public static List<Cliente> pesquisarCliente(){
+        
         PreparedStatement stmt = null;
         Connection conn = null;
+        
         List<Cliente> lista = new ArrayList<Cliente>();
         
-        String sql = "SELECT * FROM tb_clientes WHERE CPF_CLIENTE = '%"+pesquisa+"%'";
+        String sql = "SELECT * FROM TB_CLIENTES LIMIT 8";
         
         try {
             conn = obterConexao();
@@ -186,14 +187,15 @@ public class ClienteDAO {
         return lista;
     }
     //listagem de clientes
-    public static List<Cliente> listarClientes(){
+    public static List<Cliente> consultarClientes(String pesquisa){
         List<Cliente> lista = new ArrayList<>();
         PreparedStatement stmt = null;
         Connection conn = null;
         
-        String sql = "SELECT * FROM TB_CLIENTES";
+        String sql = "SELECT * FROM tb_clientes WHERE NOME_CLIENTE LIKE '%"+pesquisa+"%';";
                 
         try {
+            
             conn = obterConexao();
             stmt = conn.prepareStatement(sql);
             ResultSet rs = stmt.executeQuery();
