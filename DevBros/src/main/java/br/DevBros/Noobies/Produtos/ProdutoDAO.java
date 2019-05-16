@@ -1,5 +1,6 @@
 package br.DevBros.Noobies.Produtos;
 
+import br.DevBros.Noobies.Produtos.Produto;
 import br.DevBros.Noobies.Utils.ConnectionUtils;
 import static br.DevBros.Noobies.Utils.ConnectionUtils.obterConexao;
 import java.sql.Connection;
@@ -121,19 +122,13 @@ public class ProdutoDAO {
         Connection conn = null;
         
         //Preparar string sql
-        String sql = "UPDATE tb_produtos SET NOME_PRODUTO = ?, DESCRICAO = ?, VALOR_COMPRA = ?, VALOR_VENDA = ?, QUANTIDADE = ?"
-                + "WHERE id = ?";
+        String sql = "UPDATE tb_produtos SET NOME_PRODUTO = '"+produto.getNomeProd()+"', VALOR_COMPRA = "+produto.getValorCompra()+", VALOR_VENDA = "+produto.getValorVenda()+""
+                + ", QUANTIDADE = "+produto.getQuantidade()+", CATEGORIA = '"+produto.getCategoria()+"' WHERE COD_PRODUTO = "+produto.getCodProduto()+";";
         
         //Obten conexão para SQL workbench
         try{
             conn = obterConexao();
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, produto.getNomeProd());
-            stmt.setString(2, produto.getDescProd());
-            stmt.setDouble(3, produto.getValorCompra());
-            stmt.setDouble(4, produto.getValorVenda());
-            stmt.setInt(5, produto.getQuantidade());
-            stmt.setInt(6, produto.getCodProduto());
 
             // 2) Executar SQL
             stmt.executeUpdate();
@@ -168,53 +163,6 @@ public class ProdutoDAO {
         Connection conn = null;
         
         String sql = "SELECT * FROM tb_produtos WHERE NOME_PRODUTO LIKE '%"+pesquisa+"%';";
-                
-        try {
-            conn = obterConexao();
-            stmt = conn.prepareStatement(sql);
-
-            ResultSet rs = stmt.executeQuery();
-            
-
-            while(rs.next()){
-                Produto prod = new Produto();
-                prod.setCodProduto(rs.getInt("COD_PRODUTO"));
-                prod.setNomeProd(rs.getString("NOME_PRODUTO"));
-                prod.setValorCompra(rs.getDouble("VALOR_COMPRA"));
-                prod.setValorVenda(rs.getDouble("VALOR_VENDA"));
-                prod.setQuantidade(rs.getInt("QUANTIDADE"));
-                prod.setCategoria(rs.getString("CATEGORIA"));
-                
-                lista.add(prod);
-            }
-        } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Não foi possível executar" + e);
-        } finally{
-            if(stmt != null){
-                try {
-                    stmt.close();
-                } catch (SQLException e) {
-                    System.out.println("Erro ao fechar conexão" + e);
-                }
-            }
-            if(conn != null){
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    System.out.println("Erro ao fechar conexão" + e);
-                }
-            }
-        }
-        
-        return lista;
-    }
-    
-    public static List<Produto> pesquisarProduto(int pesquisa){
-        List<Produto> lista = new ArrayList<>();
-        PreparedStatement stmt = null;
-        Connection conn = null;
-        
-        String sql = "SELECT * FROM tb_produtos WHERE COD_PRODUTO = "+pesquisa+";";
                 
         try {
             conn = obterConexao();
@@ -347,6 +295,53 @@ public class ProdutoDAO {
             }
         }
         return listaProdutos;
+    }
+
+    public static List<Produto> pesquisarProduto(int pesquisa) {
+        List<Produto> lista = new ArrayList<>();
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        
+        String sql = "SELECT * FROM tb_produtos WHERE NOME_PRODUTO LIKE '%"+pesquisa+"%';";
+                
+        try {
+            conn = obterConexao();
+            stmt = conn.prepareStatement(sql);
+
+            ResultSet rs = stmt.executeQuery();
+            
+
+            while(rs.next()){
+                Produto prod = new Produto();
+                prod.setCodProduto(rs.getInt("COD_PRODUTO"));
+                prod.setNomeProd(rs.getString("NOME_PRODUTO"));
+                prod.setValorCompra(rs.getDouble("VALOR_COMPRA"));
+                prod.setValorVenda(rs.getDouble("VALOR_VENDA"));
+                prod.setQuantidade(rs.getInt("QUANTIDADE"));
+                prod.setCategoria(rs.getString("CATEGORIA"));
+                
+                lista.add(prod);
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Não foi possível executar" + e);
+        } finally{
+            if(stmt != null){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+            if(conn != null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+        }
+        
+        return lista;
     }
     
 }

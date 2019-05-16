@@ -5,7 +5,10 @@
  */
 package br.DevBros.Noobies.Produtos;
 
+import br.DevBros.Noobies.Produtos.ConsultarProdutoServlet;
+import br.DevBros.Noobies.Produtos.Produto;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,26 +23,26 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author victor.maoliveira
  */
-@WebServlet(name = "EditarProdutoServlet", urlPatterns = {"/editarProd"})
+@WebServlet(name = "EditarProdutoServlet", urlPatterns = {"/EditarProduto"})
 public class EditarProdutoServlet extends HttpServlet {
 
     private void editarProduto(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException, ClassNotFoundException {
         
-        int codProduto = Integer.parseInt(request.getParameter("codProduto"));
-        String nome = request.getParameter("nome");
-        double valorCompra = Double.parseDouble(request.getParameter("valorCompra"));
-        double valorVenda = Double.parseDouble(request.getParameter("valorVenda"));
-        int quantidade = Integer.parseInt(request.getParameter("quantidade"));
-        String categoria = request.getParameter("categoria");
-      
-        RequestDispatcher dispatcher = request.getRequestDispatcher("editarProduto.jsp");
-        request.setAttribute("codProduto", codProduto);
-        request.setAttribute("nome", nome);
-        request.setAttribute("valorCompra", valorCompra);
-        request.setAttribute("valorVenda", valorVenda);
-        request.setAttribute("quantidade", quantidade);
-        request.setAttribute("categoria", categoria);
+        Produto produto = new Produto();
+        
+        // RECUPERA INFORMACOES DA REQUISICAO
+        
+        produto.setNomeProd(request.getParameter("nomeProd"));
+        produto.setValorCompra(Float.parseFloat(request.getParameter("valorCompra")));
+        produto.setValorVenda(Float.parseFloat(request.getParameter("valorVenda")));
+        produto.setQuantidade(Integer.parseInt(request.getParameter("quantidade")));
+        produto.setCategoria(request.getParameter("categoria"));
+        produto.setCodProduto(Integer.parseInt(request.getParameter("codProduto")));
+        
+        ProdutoDAO.editarProduto(produto);
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/consultar");
         dispatcher.forward(request, response);
     }
 
