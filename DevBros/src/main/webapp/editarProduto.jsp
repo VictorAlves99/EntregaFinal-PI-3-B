@@ -23,7 +23,7 @@
                     <p>ID do Produto:</p>
                 </div>
                 <div class="divDescricaoTxtArea">
-                    <input value="${codProduto}" name="codProduto" type="text" disabled>
+                    <input value="${codProduto}" name="codProduto" type="text" readonly>
                     <c:if test="${not empty erroDescricao}">
                         <div style="background-color: lightcoral"><c:out value="${erroDescricao}" /></div>
                     </c:if>
