@@ -39,7 +39,6 @@
             <br>
             <div>
                 <label class="filial">Filial: </label>
-<!--                <input type="text" name="branch" required value="${funcionario.getFilial()}">-->
                 <select class="filial" name="branch" required value="${funcionario.getFilial()}">
                   <option value="${funcionario.getFilial()}" required>${funcionario.getFilial()}</option>
                   <option value="SP (MATRIZ)">SP (MATRIZ)</option>
@@ -49,7 +48,6 @@
                 </select>
                 <br>
                 <label class = "cargo">Cargo: </label>
-<!--                <input type="text" name="typeoffice" required value="${funcionario.getCargo()}">-->
                 <select class="opcoes" name="typeoffice" required value="${funcionario.getCargo()}">
                   <option value="${funcionario.getCargo()}" required>${funcionario.getCargo()}</option>
                   <option value="Diretor">Diretor</option>

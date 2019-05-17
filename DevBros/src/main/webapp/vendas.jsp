@@ -27,7 +27,7 @@
     <body>
         <header>
             <div class="titulo">
-                <img class="logo" src="https://i.imgur.com/1ayr6NR.png">
+                <a href="/DevBros/menu.jsp"><img class="logo" src="https://i.imgur.com/1ayr6NR.png"></a>
                 <h1>Noobies</h1>
             </div>
         </header>
@@ -38,15 +38,15 @@
     <div class="codigoprod">
         <form action="chambra" method="POST">
             <label class="codigo">Código do produto: </label><input class="codigo" type="text" name="cod_produto">
+            <label>Quantidade: </label><input class="quantidadeTxt" type="text" name="qtd" value="${prod.qtd}">
             <button class="ok">OK</button>
         </form>
     </div>
-    <form action="" class = "conteudo">
+    <form action="finalizar" class = "conteudo">
         <div class="quantidade">
-            <label class="cpf">CPF do cliente: </label><input class="cpfTxt" type="text" name="cpfcliente">&nbsp;&nbsp;&nbsp;
-            <label>Quantidade: </label><input class="quantidadeTxt" type="text" name="qtd"></input>
+            <label class="cpf">CPF do cliente: </label><input class="cpfTxt" type="text" name="cpfcliente">&nbsp;&nbsp;&nbsp;            
             <label class="datavenda">Data de venda: </label><input class="dataTxt" type="date" name="dia"></input>
-            <label class="filial">Filial: </label><input class="filialTxt" type="text" name="filialE" value="${funcionario.filial}" readonly></input>
+            <label class="filial">Filial: </label><input class="filialTxt" type="text" name="filialE" value="${funcionario.getFilial()}" readonly></input>
         </div>
 
         <table class="tabela">
@@ -65,7 +65,7 @@
                         <td><c:out value="${produto.codProduto}"/></td>
                         <td><c:out value="${produto.nomeProd}"/></td>
                         <td><c:out value="${produto.categoria}"/></td>
-                        <td><c:out value="${produto.quantidade}"/></td>
+                        <td><c:out value="${prod.qtd}"/></td>
                         <td><c:out value="${produto.valorVenda}"/></td>
                     </tr>
                 </c:forEach> 
@@ -76,9 +76,9 @@
                 <input class="pgtxt" type="text" name="pg"></input>
                 <div class="formaspgmto">
                     <legend class="checkies">Formas de pagamento:</legend>
-                    <input type="radio" name="pgto" value="1" /> <label>Dinheiro</label>
-                    <input type="radio" name="pgto" value="2" /> <label>Débito</label>
-                    <input type="radio" name="pgto" value="3" /> <label>Crédito</label>
+                    <input type="radio" name="pgto" value="Dinheiro" /> <label>Dinheiro</label>
+                    <input type="radio" name="pgto" value="Débito" /> <label>Débito</label>
+                    <input type="radio" name="pgto" value="Crédito" /> <label>Crédito</label>
                 </div>
                 <div class="botoes">
                     <button class="finalizar">FINALIZAR COMPRA</button>

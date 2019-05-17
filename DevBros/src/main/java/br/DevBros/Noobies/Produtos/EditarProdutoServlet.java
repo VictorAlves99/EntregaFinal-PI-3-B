@@ -44,8 +44,9 @@ public class EditarProdutoServlet extends HttpServlet {
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("/consultar");
         dispatcher.forward(request, response);
-    }
 
+    }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
