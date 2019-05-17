@@ -3,15 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.DevBros.Noobies.Vendas;
+package br.DevBros.Noobies.Produtos;
 
 import br.DevBros.Noobies.Produtos.ConsultarProdutoServlet;
-import br.DevBros.Noobies.Produtos.Produto;
-import br.DevBros.Noobies.Produtos.ProdutoDAO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -21,25 +17,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "PesquisarProdutoVendasServlet", urlPatterns = {"/chambra"})
-public class PesquisarProdutoVendasServlet extends HttpServlet {
+/**
+ *
+ * @author victor.maoliveira
+ */
+@WebServlet(name = "EditarProdutoFormServlet", urlPatterns = {"/editarProdForm"})
+public class EditarProdutoFormServlet extends HttpServlet {
 
-    private void listarProdutos(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
+    private void editarProduto(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException, ClassNotFoundException {
         
-        Produto p = new Produto();
-        int quantidade = Integer.parseInt(request.getParameter("qtd"));
-        p.setQuantidade(quantidade);
-        request.setAttribute("prod", p);
-        
-        String valorPesquisa;
-        valorPesquisa = request.getParameter("cod_produto");
-        
-        List<Produto> produtos = ProdutoDAO.pesquisarProduto(Integer.parseInt(valorPesquisa));
-        request.setAttribute("listaProdutos",null);
-        request.setAttribute("listaProdutos", produtos);
-               
-        RequestDispatcher dispatcher = request.getRequestDispatcher("vendas.jsp");
+        int codProduto = Integer.parseInt(request.getParameter("codProduto"));
+        String nome = request.getParameter("nomeProd");
+        double valorCompra = Double.parseDouble(request.getParameter("valorCompra"));
+        double valorVenda = Double.parseDouble(request.getParameter("valorVenda"));
+        int quantidade = Integer.parseInt(request.getParameter("quantidade"));
+        String categoria = request.getParameter("categoria");
+      
+        RequestDispatcher dispatcher = request.getRequestDispatcher("editarProduto.jsp");
+        request.setAttribute("codProduto", codProduto);
+        request.setAttribute("nomeProd", nome);
+        request.setAttribute("valorCompra", valorCompra);
+        request.setAttribute("valorVenda", valorVenda);
+        request.setAttribute("quantidade", quantidade);
+        request.setAttribute("categoria", categoria);
         dispatcher.forward(request, response);
     }
 
@@ -47,7 +48,7 @@ public class PesquisarProdutoVendasServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            listarProdutos("GET", request, response);
+            editarProduto("GET", request, response);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(ConsultarProdutoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -57,7 +58,7 @@ public class PesquisarProdutoVendasServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            listarProdutos("POST", request, response);
+            editarProduto("POST", request, response);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(ConsultarProdutoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }

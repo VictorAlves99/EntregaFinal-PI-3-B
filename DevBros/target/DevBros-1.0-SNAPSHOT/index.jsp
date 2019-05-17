@@ -14,14 +14,14 @@
         <div class="div">
             <img src="img/logo.png" alt="Logo" class="logo"><br>
             <div>
-                <form method="get">
+                <form action="Login" method="post">
                     <div>
                         <img src="img/iconUser.png">
-                        <input type="text" required><br><br>
+                        <input type="text" name="username" required><br><br>
                     </div>
                     <div>
                         <img src="img/iconKey.png">
-                        <input type="password" required><br><br>
+                        <input type="password" name="password" required><br><br>
                     </div>
                     <button type="submit">Entrar</button>            
                 </form>
