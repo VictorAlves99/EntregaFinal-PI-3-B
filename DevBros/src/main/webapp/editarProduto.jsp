@@ -18,12 +18,12 @@
         <br>
         <hr>
         <div>
-            <form action="CadastrarProduto" method="post">
+            <form action="EditarProduto" method="post">
                 <div class="divDescricao">
                     <p>ID do Produto:</p>
                 </div>
                 <div class="divDescricaoTxtArea">
-                    <input value="${codProduto}" name="idProduto" type="text">
+                    <input value="${codProduto}" name="codProduto" type="text" disabled>
                     <c:if test="${not empty erroDescricao}">
                         <div style="background-color: lightcoral"><c:out value="${erroDescricao}" /></div>
                     </c:if>
@@ -32,7 +32,7 @@
                     <p>Nome do Produto:</p>
                 </div>
                 <div class="divNomeInput">
-                    <input value="${nome}" name="nome" type="text" required>
+                    <input value="${nomeProd}" name="nomeProd" type="text" required>
                     <c:if test="${not empty erroNome}">
                         <div style="background-color: lightcoral"><c:out value="${erroNome}" /></div>
                     </c:if>
@@ -76,7 +76,7 @@
                 <br><br><br>
                 <div class="divBotao">
                     <button type="reset">Limpar</button>
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit">Atualizar</button>
             </form>
         </div>
     </body>

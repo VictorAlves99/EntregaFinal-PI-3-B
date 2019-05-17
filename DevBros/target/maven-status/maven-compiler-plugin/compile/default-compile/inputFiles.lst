@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\priscyla.poliveira\Documents\PI III\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\ExcluirClienteServlet.java
 C:\Users\priscyla.poliveira\Documents\PI III\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\CadastrarClienteServlet.java
 C:\Users\priscyla.poliveira\Documents\PI III\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\PesquisarClienteServlet.java
@@ -22,3 +23,31 @@ C:\Users\priscyla.poliveira\Documents\PI III\EntregaFinal-PI-3-B\DevBros\src\mai
 C:\Users\priscyla.poliveira\Documents\PI III\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\CadastrarProdutoServlet.java
 C:\Users\priscyla.poliveira\Documents\PI III\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\ConsultarProdutoServlet.java
 C:\Users\priscyla.poliveira\Documents\PI III\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\Produto.java
+=======
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Funcionario\ListarFuncionarioServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\EditarProdutoFormServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Utils\ConnectionUtils.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\PesquisarClienteServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\EditarClienteServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Funcionario\FuncionarioDAO.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\ExcluirClienteServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\EditarProdutoServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Vendas\CadastrarVendaServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\ConsultarClienteServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\Cliente.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\ClienteDAO.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\ExcluirProdutoServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\PesquisarProdutoServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Funcionario\LoginFuncionarioServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\ConsultarProdutoServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Vendas\PesquisarProdutoVendasServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\ProdutoDAO.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\CadastrarProdutoServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Funcionario\Funcionario.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Funcionario\DesativarFuncionarioServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Funcionario\AtualizarFuncionariosServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Produtos\Produto.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Funcionario\CadastroFuncionarioServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Clientes\CadastrarClienteServlet.java
+C:\Users\nathan.osantos\Desktop\EntregaFinal-PI-3-B\DevBros\src\main\java\br\DevBros\Noobies\Funcionario\EditarFuncionarioServlet.java
+>>>>>>> d0827614a653a61d4ce8c9808e29d1a4c2696af0

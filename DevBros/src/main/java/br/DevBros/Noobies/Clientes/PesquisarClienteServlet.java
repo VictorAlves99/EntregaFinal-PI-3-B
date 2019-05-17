@@ -23,7 +23,7 @@ public class PesquisarClienteServlet extends HttpServlet {
        
         String valorPesquisa = request.getParameter("pesquisa");
         
-        List<Cliente> clientes = ClienteDAO.pesquisarCliente(valorPesquisa);
+        List<Cliente> clientes = ClienteDAO.consultarClientes(valorPesquisa);
         request.setAttribute("listaClientes",null);
         request.setAttribute("listaClientes", clientes);
             

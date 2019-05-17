@@ -4,10 +4,10 @@ import java.sql.Date;
 public class Cliente {
     
     private int codCliente;
-    private String cpf;
     private String nome;
-    private String email;
+    private String cpf;
     private String telefone;
+    private String email;
     
     public Cliente(){
         
@@ -21,10 +21,8 @@ public class Cliente {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
-        this.email = email;
-     
+        this.email = email; 
     }
-    
     
     public Cliente(int codCliente, String nome, String cpf,String telefone, String email ) {
         this.codCliente = codCliente;
@@ -37,6 +35,14 @@ public class Cliente {
     Cliente(String codCliente) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    public int getcodCliente() {
+        return codCliente;
+    }
+
+    public void setcodCliente(int codCliente) {
+        this.codCliente = codCliente;
+    }
   
     public String getNome() {
         return nome;
@@ -45,13 +51,13 @@ public class Cliente {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public String getEmail() {
-        return email;
+    
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getTelefone() {
@@ -61,20 +67,12 @@ public class Cliente {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
     
-     public int getcodCliente() {
-        return codCliente;
+    public String getEmail() {
+        return email;
     }
 
-    public void setcodCliente(int codCliente) {
-        this.codCliente = codCliente;
-    }
+    public void setEmail(String email) {
+        this.email = email;
+    }   
 }

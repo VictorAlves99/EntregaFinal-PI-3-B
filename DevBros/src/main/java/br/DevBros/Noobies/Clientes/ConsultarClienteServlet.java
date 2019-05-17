@@ -1,8 +1,5 @@
 package br.DevBros.Noobies.Clientes;
 
-import br.DevBros.Noobies.Clientes.ClienteDAO;
-import br.DevBros.Noobies.Clientes.Cliente;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -26,7 +23,7 @@ public class ConsultarClienteServlet extends HttpServlet {
     private void listarClientes(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException, ClassNotFoundException {
 
-        List<Cliente> clientes = ClienteDAO.listarClientes();
+        List<Cliente> clientes = ClienteDAO.pesquisarCliente();
         request.setAttribute("listaClientes", clientes);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("consultar-clientes.jsp");

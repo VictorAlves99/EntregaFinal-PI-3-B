@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "CadastrarClienteServlet", urlPatterns = {"/CadastrarCliente"})
 public class CadastrarClienteServlet extends HttpServlet {
 
-    protected void processRequest(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
+    protected void incluirCliente(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         Cliente cliente = new Cliente();
@@ -43,13 +43,13 @@ public class CadastrarClienteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest("GET",request, response);
+        incluirCliente("GET",request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest("POST", request, response);
+        incluirCliente("POST", request, response);
 
     }
 }
