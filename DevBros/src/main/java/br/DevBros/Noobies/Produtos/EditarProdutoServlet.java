@@ -41,8 +41,9 @@ public class EditarProdutoServlet extends HttpServlet {
         request.setAttribute("quantidade", quantidade);
         request.setAttribute("categoria", categoria);
         dispatcher.forward(request, response);
-    }
 
+    }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

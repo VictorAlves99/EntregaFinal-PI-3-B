@@ -38,8 +38,7 @@
                     <p>Descrição do Produto:</p>
                 </div>
                 <div class="divDescricaoTxtArea">
-                    <textarea name="descricao">
-                    </textarea>
+                    <textarea name="descricao"></textarea>
                     <c:if test="${not empty erroDescricao}">
                         <div style="background-color: lightcoral"><c:out value="${erroDescricao}" /></div>
                     </c:if>

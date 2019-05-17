@@ -11,7 +11,6 @@ br\DevBros\Noobies\Clientes\CadastrarClienteServlet.class
 br\DevBros\Noobies\Funcionario\DesativarFuncionarioServlet.class
 br\DevBros\Noobies\Funcionario\Funcionario.class
 br\DevBros\Noobies\Produtos\EditarProdutoServlet.class
-br\DevBros\Noobies\Funcionario\AtualizarFuncionariosServlet.class
 br\DevBros\Noobies\Produtos\ExcluirProdutoServlet.class
 br\DevBros\Noobies\Vendas\PesquisarProdutoVendasServlet.class
 br\DevBros\Noobies\Clientes\ClienteDAO.class
@@ -22,3 +21,4 @@ br\DevBros\Noobies\Produtos\Produto.class
 br\DevBros\Noobies\Funcionario\LoginFuncionarioServlet.class
 br\DevBros\Noobies\Funcionario\FuncionarioDAO.class
 br\DevBros\Noobies\Produtos\ConsultarProdutoServlet.class
+br\DevBros\Noobies\Vendas\CadastrarVendaServlet.class
