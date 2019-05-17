@@ -31,7 +31,7 @@
                 <a href="/DevBros/ti.jsp"><img src="img/ti.png"></a>
             </button>
             <button>
-                <a href="/DevBros/vendas.jsp"><img src="img/vendas.png"></a>
+                <a href="/DevBros/menuVendas.jsp"><img src="img/vendas.png"></a>
             </button>
         </div>
         <div class="botoesCenter">
