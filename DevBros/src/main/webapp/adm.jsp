@@ -20,7 +20,7 @@
                 <a href="/DevBros/cadastrar-clientes.jsp">
                     <button type="button" class="cadbutton">﻿Cadastrar Cliente</button>
                 </a>
-                <a href="/DevBros/consultar-clientes.jsp">
+                <a href="/DevBros/consultarclientes">
                     <button type="button" class="consbutton">﻿Consultar Clientes</button>
                 </a> 
             </div>

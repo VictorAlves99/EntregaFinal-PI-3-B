@@ -18,31 +18,25 @@
         <br>
         <hr>
         <div>
-            <form action="CadastrarCliente" method="post">
-                <div class="divDescricao">
+            <form action="alterarcliente" method="post">
+                <div>
                     <p>ID do Cliente:</p>
                 </div>
-                <div class="divDescricaoTxtArea">
-                    <input value="${codCliente}" name="idCliente" type="text">
-                    <c:if test="${not empty erroDescricao}">
-                        <div style="background-color: lightcoral"><c:out value="${erroDescricao}" /></div>
-                    </c:if>
+                <div>
+                    <input name="codCliente" type="text" readonly value="${cliente.getcodCliente()}"/>   
                 </div>
-                <div class="divNome">
+                <div>
                     <p>Nome do Cliente:</p>
                 </div>
-                <div class="divNomeInput">
-                    <input value="${nome}" name="nome" type="text" required>
-                    <c:if test="${not empty erroNome}">
-                        <div style="background-color: lightcoral"><c:out value="${erroNome}" /></div>
-                    </c:if>
+                <div>
+                    <input name="nome" type="text" value="${cliente.getNome()}">
                 </div>
                     <br>
                     <div class="divCPF">
                     <label>CPF: </label>
                 </div>
                 <div class="divCPFInput">
-                    <input class = "cpf" type="text" name="cpf" required>
+                    <input class = "cpf" type="text" name="cpf" required value="${cliente.getCpf()}">
                     <c:if test="${not empty erroCPF}">
                         <div style="background-color: lightcoral"><c:out value="${erroCPF}" /></div>
                     </c:if>                
@@ -52,7 +46,7 @@
                     <label>Telefone: </label>
                 </div>
                 <div class="divTelefoneInput">
-                    <input class="telefone" type="text" name="fone">
+                    <input class="telefone" type="text" name="fone" value="${cliente.getTelefone()}">
                     <c:if test="${not empty erroTelefone}">
                         <div style="background-color: lightcoral"><c:out value="${erroTelefone}" /></div>
                     </c:if>
@@ -62,15 +56,14 @@
                      <label>E-mail: </label>
                 </div>
                 <div class="divEmailInput">
-                    <input class="email" type="text" name="email">
+                    <input class="email" type="text" name="email" value="${cliente.getEmail()}">
                     <c:if test="${not empty erroEmail}">
                         <div style="background-color: lightcoral"><c:out value="${erroEmail}" /></div>
                     </c:if>
                 </div>                   
                 <br><br><br>
                 <div class="divBotao">
-                    <button type="reset">Limpar</button>
-                    <button type="submit">Cadastrar</button>
+                    <button type="submit">Alterar</button>
             </form>
         </div>
     </body>

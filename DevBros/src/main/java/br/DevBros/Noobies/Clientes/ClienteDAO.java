@@ -231,4 +231,49 @@ public class ClienteDAO {
         
         return lista;
     }
+    
+    
+    public static Cliente buscarCliente(Cliente c){
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        
+        String sql = "SELECT * FROM tb_clientes WHERE COD_CLIENTE=?";
+        
+        try {
+            conn = obterConexao();
+            stmt = conn.prepareStatement(sql);
+            
+            stmt.setInt(1, c.getcodCliente());
+            
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                c.setcodCliente(rs.getInt("COD_CLIENTE"));
+                c.setNome(rs.getString("NOME_CLIENTE"));
+                c.setCpf(rs.getString("CPF_CLIENTE"));
+                c.setTelefone(rs.getString("TELEFONE_CLIENTE"));
+                c.setEmail(rs.getString("EMAIL_CLIENTE"));
+            }
+            
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Não foi possível executar" + e);
+        } finally{
+            if(stmt != null){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+            if(conn != null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+        }
+        return c;
+    
+    }
 }

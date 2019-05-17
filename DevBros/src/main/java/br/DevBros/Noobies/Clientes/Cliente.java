@@ -31,10 +31,6 @@ public class Cliente {
         this.telefone = telefone;
         this.email = email;
     }
-
-    Cliente(String codCliente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     public int getcodCliente() {
         return codCliente;

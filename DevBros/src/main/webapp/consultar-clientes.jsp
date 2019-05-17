@@ -56,7 +56,10 @@
                                         <td><c:out value="${cliente.telefone}" /></td>
                                         <td><c:out value="${cliente.email}" /></td>
                                         <td>
-                                            <a class="ancora" href="editarCliente?codCliente=<c:out value='${cliente.codCliente}'/>&nome=<c:out value='${cliente.nome}'/>&cpf=<c:out value='${cliente.cpf}'/>&telefone=<c:out value='${cliente.telefone}'/>&email=<c:out value='${cliente.email}'/>">Editar</a>
+                                            
+                                           <a class="ancora" href="editarcliente?codCliente=${cliente.codCliente}">                                   
+                                            <button class="edit">EDITAR</button>
+                                            </a>
                                             <a class="ancora" href="excluirCliente?codCliente=<c:out value='${cliente.codCliente}'/>">Deletar</a>
                                         </td>
                                     </tr>
