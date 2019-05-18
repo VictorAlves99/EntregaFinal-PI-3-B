@@ -4,12 +4,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Editar Cliente</title>
-        <link href="CSS/editar-clientes.css" rel="stylesheet" type="text/css"/>
+        <link href="CSS/cadastro-clientes.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header>
             <div>
-                <a href="/DevBros/index.jsp"><img src="img/logo-simple.png"/></a>
+                <a href="/DevBros/menu.jsp"><img src="img/logo-simple.png"/></a>
                 <h1>Noobies</h1>
             </div>
         </header>
@@ -18,17 +18,17 @@
         <br>
         <hr>
         <div>
-            <form action="alterarcliente" method="post">
-                <div>
+            <form action="alterarcliente"  method="post">
+                <div class="divNome">
                     <p>ID do Cliente:</p>
                 </div>
-                <div>
+                <div class="divNomeInput">
                     <input name="codCliente" type="text" readonly value="${cliente.getcodCliente()}"/>   
                 </div>
-                <div>
+                <div class="divNome">
                     <p>Nome do Cliente:</p>
                 </div>
-                <div>
+                <div class="divNomeInput">
                     <input name="nome" type="text" value="${cliente.getNome()}">
                 </div>
                     <br>

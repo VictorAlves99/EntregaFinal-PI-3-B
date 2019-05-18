@@ -1,4 +1,5 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,7 +10,7 @@
     <body>
         <header>
             <div>
-                <a href="/DevBros/index.jsp"><img src="img/logo-simple.png"/></a>
+                <a href="/DevBros/menu.jsp"><img src="img/logo-simple.png"/></a>
                 <h1>Noobies</h1>
             </div>
         </header>

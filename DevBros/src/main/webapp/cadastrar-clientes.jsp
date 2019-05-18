@@ -10,7 +10,7 @@
     <body>
         <header>
             <div class="titulo">               
-                <a href="/DevBros/index.jsp"><img src="img/logo-simple.png"/></a>
+                <a href="/DevBros/menu.jsp"><img src="img/logo-simple.png"/></a>
                 <h2>Noobies</h2>
             </div>
         </header>
@@ -69,7 +69,7 @@
         </div>
     </div>
         <div class ="divVoltar" >
-            <a href="/DevBros/index.jsp"><button type="button">Voltar</button></a>
+            <a href="/DevBros/menu.jsp"><button type="button">Voltar</button></a>
         </div>
 </center>
 </body>

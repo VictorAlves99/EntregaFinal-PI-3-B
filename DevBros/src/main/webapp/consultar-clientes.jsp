@@ -13,7 +13,7 @@
         <div id="fixed">
             <header>
                 <div>
-                    <a href="/DevBros/index.jsp"><img src="img/logo-simple.png"/></a>
+                    <a href="/DevBros/menu.jsp"><img src="img/logo-simple.png"/></a>
                     <h1>Noobies</h1>
                 </div>
             </header>
@@ -51,8 +51,8 @@
                                 <c:forEach items="${listaClientes}" var="cliente" >
                                     <tr class="linhaSec">
                                         <td><c:out value="${cliente.codCliente}"/></td>
-                                        <td><c:out value="${cliente.nome}" /></td>  
-                                        <td><c:out value="${cliente.cpf}" /></td>        
+                                        <td><c:out value="${cliente.cpf}" /></td>  
+                                        <td><c:out value="${cliente.nome}"/></td>        
                                         <td><c:out value="${cliente.telefone}" /></td>
                                         <td><c:out value="${cliente.email}" /></td>
                                         <td>

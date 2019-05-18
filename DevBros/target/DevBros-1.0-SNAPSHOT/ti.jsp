@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>T.I.</title>
-        <link href = "CSS/index.css" rel = "stylesheet" type = "text/css"/>
+        <link href = "CSS/menu.css" rel = "stylesheet" type = "text/css"/>
     </head>
 
     <body>

@@ -13,7 +13,7 @@
     <body>
         <header>
             <div>
-                <a href="/DevBros/index.jsp"><img src="img/logo-simple.png"/></a>
+                <a href="/DevBros/menu.jsp"><img src="img/logo-simple.png"/></a>
                 <h1>Noobies</h1>
             </div>
         </header>

@@ -71,7 +71,7 @@ hr{
 .tabela tr td, .tabela tr th{
   font-size: 25px;
   text-align: center;
-  width: 185px;
+  width: 200px;
   height: 45px;
   border: 1px solid black;
   cursor: context-menu;
@@ -91,7 +91,7 @@ hr{
 
 .tabela{
   margin-top: 100px;
-  margin-left: -1338px;
+  margin-left: -1500px;
   margin-bottom: 50px;
   table-layout: fixed;
 }
