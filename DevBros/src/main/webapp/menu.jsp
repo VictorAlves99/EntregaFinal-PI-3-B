@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="CSS/menu.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
 </head>
-    <body>
+    <body>       
         <header>
             <div>
                 <img src="img/logo-simple.png">

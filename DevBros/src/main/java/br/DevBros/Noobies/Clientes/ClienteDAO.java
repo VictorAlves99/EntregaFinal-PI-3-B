@@ -17,7 +17,7 @@ public class ClienteDAO {
         
         boolean linhasAfetadas = false;
           
-        String sql = "INSERT INTO TB_CLIENTES(NOME_CLIENTE, CPF_CLIENTE, TELEFONE_CLIENTE, EMAIL_CLIENTE) VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO TB_CLIENTES (NOME_CLIENTE, CPF_CLIENTE, TELEFONE_CLIENTE, EMAIL_CLIENTE) VALUES(?, ?, ?, ?)";
     
         try {
             conn = obterConexao();
@@ -60,7 +60,7 @@ public class ClienteDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         
-        String sql = "UPDATE TB_CLIENTES SET NOME_CLIENTE = ?, CPF_CLIENTE =?, TELEFONE_CLIENTE = ?, EMAIL_CLIENTE = ? WHERE COD_CLIENTE= ?";
+        String sql = "UPDATE TB_CLIENTES SET NOME_CLIENTE = ?, CPF_CLIENTE = ?, TELEFONE_CLIENTE = ?, EMAIL_CLIENTE = ? WHERE COD_CLIENTE= ?";
         
         try {
             conn = obterConexao();

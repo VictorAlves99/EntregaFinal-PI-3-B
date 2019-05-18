@@ -26,13 +26,14 @@ public class AlterarClienteServlet extends HttpServlet {
             throws ServletException, IOException {
       
         
-        int codCliente = Integer.parseInt(request.getParameter("codCliente"));
-        String nome = request.getParameter("nome");
-        String cpf = request.getParameter("cpf");
-        String telefone = request.getParameter("telefone");
-        String email = request.getParameter("email");
+        Cliente c = new Cliente(); 
         
-        Cliente c = new Cliente(codCliente, nome, cpf, telefone, email); 
+        c.setcodCliente(Integer.parseInt(request.getParameter("codCliente")));
+        c.setNome(request.getParameter("nome"));
+        c.setCpf(request.getParameter("cpf"));
+        c.setTelefone(request.getParameter("fone"));
+        c.setEmail(request.getParameter("email"));
+        
         ClienteDAO.alterarCliente(c);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("/consultarclientes");

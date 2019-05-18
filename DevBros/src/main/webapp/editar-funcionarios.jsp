@@ -5,12 +5,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Editar funcionários</title>
-        <link href = "CSS/editar-funcionarios.css" rel = "stylesheet" type = "text/css"/>
+        <link href = "CSS/cadastro-funcionarios.css" rel = "stylesheet" type = "text/css"/>
     </head>
     <body>
         <header>
             <div class="titulo">
-                <a href="/DevBros/index.jsp"><img src="https://i.imgur.com/1ayr6NR.png"/></a>
+                <a href="/DevBros/menu.jsp"><img src="https://i.imgur.com/1ayr6NR.png"/></a>
                 <h1>Noobies</h1>
             </div>
         </header>

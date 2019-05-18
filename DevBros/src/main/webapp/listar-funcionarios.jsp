@@ -15,7 +15,7 @@
     <header>
       <div class="menu">
         <div class="titulo">
-          <a href="/DevBros/index.jsp"><img src="https://i.imgur.com/1ayr6NR.png"/></a>
+          <a href="/DevBros/menu.jsp"><img src="https://i.imgur.com/1ayr6NR.png"/></a>
           <h1>Noobies</h1>
         </div>
       </div>
@@ -36,7 +36,7 @@
        <a var="funcionario" class="ancoraB" href="pesquisar?nome=${funcionario.getNome()}">                                   
             <button class="buscar">BUSCAR</button>
          </a>-->
-        <form action="pesquisar" method="post">
+        <form action="pesquisarFuncionario" method="post">
             Pesquisar funcionário: <input class="pesq" type="text" name="pesquisa" id="pesquisa">
             <button class="buscar">BUSCAR</button>
         </form>
