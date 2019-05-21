@@ -13,17 +13,17 @@ public class Usuario implements Serializable{
     private String login;
     private String nomeCompleto;
     private String hashSenha;
-
-   // private List<Cargo> cargo;
+    private String senha;
+    private List<Cargo> cargos;
 
     public Usuario(){
         
     }
-    public Usuario(String login, String nomeCompleto, List<Cargo> cargo){
+    public Usuario(String login, String nomeCompleto, String senha, List<Cargo> cargos){
          this.login = login;
          this.nomeCompleto = nomeCompleto;
-         setSenha(senhaAberta);
-         this.cargo = cargo;
+         this.senha = senha;
+         this.cargos = cargos;
     }
     public String getLogin() {
         return login;
@@ -48,19 +48,26 @@ public class Usuario implements Serializable{
     public void setHashSenha(String senha) {
         this.hashSenha = senha;
     }
-    public void setSenha(String senhaAberta){
-        this.hashSenha = BCrypt.hashpw(senhaAberta, BCrypt.gensalt());
+    public void setSenha(String senha){
+        this.hashSenha = BCrypt.hashpw(senha, BCrypt.gensalt());
     }
 
-    /*public List<Cargo> getCargo() {
-        return cargo;
+    public List<Cargo> getCargo() {
+        return cargos;
     }
 
     public void setCargo(List<Cargo> cargo) {
-        this.cargo = cargo;
-    }*/
+        this.cargos = cargo;
+    }
     public boolean validarSenha(String senhaAberta){
         return BCrypt.checkpw(senhaAberta, hashSenha);
     }
-           
+    public boolean verificarCargo(String nomeCargo){
+        for (Cargo c : cargos){
+            if(c.getNomeCargo().equals(nomeCargo)){
+                return true;
+            }            
+        }
+        return false;
+    }        
 }
