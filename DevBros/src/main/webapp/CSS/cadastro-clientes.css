@@ -1,20 +1,26 @@
-.form-group input{
-  padding: 5px;
-  margin: 5px 0;
-  width: 400px;
-  height: 22.5px;
-  display:flex;
-  justify-content: center;
-  margin-right: 100px;
+.jumbotron{
+
+	margin-top: 60px;
+}
+
+.jumbotron h4{
+
+	margin-bottom: 20px;
 
 }
 
-.a img{
-size: 30px;
+.divBotao{
 
+	margin-left: 82%;
+	margin-top: 30px;
 }
 
-.nav navbar-nav{
-font-size: 10px;
+.media-body h4{
+
+	margin-top: 27px;
+}
+
+.media{
+	margin-bottom: 25px;
 
 }

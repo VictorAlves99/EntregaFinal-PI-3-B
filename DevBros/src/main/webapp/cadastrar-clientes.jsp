@@ -8,130 +8,110 @@
         <link rel="stylesheet" href="CSS/cadastro-clientes.css" type = "text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="cadastro-clientes.css" type = "text/css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-<<<<<<< HEAD
-        <header>
-            <div class="titulo">               
-                <a href="/DevBros/menu.jsp"><img src="img/logo-simple.png"/></a>
-                <h2>Noobies</h2>
-            </div>
-        </header>
-    <center>
-        <div class="divClientes">
-             <h2 class="h2">Cadastro de Clientes</h2>
-        </div>
-        <hr>
-        <div class="formulario">
-            <form action="CadastrarCliente" method="post">
-=======
 
         <nav class="navbar navbar-expand-sm  bg-light ">
             <a class="navbar-brand" href="/DevBros/menu.jsp">
                 <img src="img/logo-simple.png" alt="Logo" style="width:50px;">
             </a>
+
             <ul class="nav navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Produto
-                    </a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Produto</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/DevBros/cadastro-produtos.jsp">Cadastrar</a>
+                        <a class="dropdown-item" href="/DevBros/cadastrar-produtos.jsp">Cadastrar</a>
                         <a class="dropdown-item" href="/DevBros/consultar-produtos.jsp">Consultar</a>
                     </div>
                 </li>
->>>>>>> 68cc7b5aa47a77912e892539dc4d6c9e1e50533b
-                
-                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Cliente
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Cadastrar</a>
-                        <a class="dropdown-item" href="#">Consultar</a>
-                    </div>
-                </li>
-                
+
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Funcionario
-                    </a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Cliente</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Cadastrar</a>
-                        <a class="dropdown-item" href="#">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/cadastrar-clientes.jsp">Cadastrar</a>
+                        <a class="dropdown-item" href="/DevBros/consultar-clientes.jsp">Consultar</a>
                     </div>
                 </li>
-                
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Funcionario</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/DevBros/cadastrar-funcionarios.jsp">Cadastrar</a>
+                        <a class="dropdown-item" href="/DevBros/listar-funcionarios.jsp">Consultar</a>
+                    </div>
+                </li>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                         Vendas
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Cadastrar</a>
-                        <a class="dropdown-item" href="#">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/vendas.jsp">Nova Venda</a>
+                        <a class="dropdown-item" href="/DevBros/relatorio.jsp">Relatório</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
 
+    <div class="container">
+        <div class="jumbotron">
+            <div class="media border p-1">
+                <img src="img/mario_cliente.png" alt="Novo Cliente" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                <div class="media-body">
+                    <h4>Cliente</h4>   
+                </div>
+            </div>   
 
-    <div class="formulario">
-        <form action="CadastrarCliente" method="post">
+            <div class="formulario">
+                <form action="CadastrarCliente" method="post">
 
-            <div class="form-group">
-                <label for="Nome">Nome:</label>
-                <input type="text" class="form-control" id="nome" placeholder="Informe seu nome completo" name="nome" required value="${cliente.nome}">
-                <c:if test="${not empty erroNome}">
-                    <div style="background-color: lightblue"><c:out value="${erroNome}" /></div>
-                </c:if>             
+                    <div class="form-group">
+                        <label for="Nome">Nome:</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Informe seu nome completo" name="nome" required value="${cliente.nome}">
+                        <c:if test="${not empty erroNome}">
+                            <div style="background-color: lightblue"><c:out value="${erroNome}" /></div>
+                        </c:if>             
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" class="form-control" id="cpf" placeholder="Informe CPF (Somente números)" name="cpf" required value="${cliente.cpf}">
+                        <c:if test="${not empty erroCPF}">
+                            <div style="background-color: lightblue"><c:out value="${erroCPF}" /></div>
+                        </c:if>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Telefone">Telefone:</label>
+                        <input type="text" class="form-control" id="Telefone" placeholder="Informe Celular (Somente números)" name="Telefone" required value="${cliente.telefone}">
+                        <c:if test="${not empty erroTelefone}">
+                            <div style="background-color: lightblue"><c:out value="${erroTelefone}" /></div>
+                        </c:if>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Email">Email:</label>
+                        <input type="email" class="form-control" id="Email" placeholder="Informe Email principal" name="email" required value="${cliente.email}">              
+                        <c:if test="${not empty erroEmail}">
+                            <div style="background-color: lightblue"><c:out value="${erroEmail}" /></div>
+                        </c:if>
+                    </div>
+
+                    <div class="divBotao">
+                        <button type="submit" class="btn  btn-primary">Cadastrar</button>
+                        <a href="/DevBros/index.jsp"><button type="button" class="btn btn-info">Cancelar</button></a>
+                    </div>
+
+                </form>
             </div>
-
-            <div class="form-group">
-                <label for="cpf">CPF:</label>
-                <input type="text" class="form-control" id="cpf" placeholder="Informe CPF" name="cpf" required value="${cliente.cpf}">
-                <c:if test="${not empty erroCPF}">
-                    <div style="background-color: lightblue"><c:out value="${erroCPF}" /></div>
-                </c:if>
-            </div>
-
-
-            <div class="form-group">
-                <label for="Telefone">Telefone:</label>
-                <input type="text" class="form-control" id="Telefone" placeholder="Informe Celular" name="Telefone" required value="${cliente.telefone}">
-                <input class="telefone" type="text" name="fone" >
-                <c:if test="${not empty erroTelefone}">
-                    <div style="background-color: lightblue"><c:out value="${erroTelefone}" /></div>
-                </c:if>
-            </div>
-
-
-            <div class="form-group">
-                <label for="Email">Email:</label>
-                <input type="text" class="email" id="Email" placeholder="Informe Email principal" name="email" required value="${cliente.email}">              
-                <c:if test="${not empty erroEmail}">
-                    <div style="background-color: lightblue"><c:out value="${erroEmail}" /></div>
-                </c:if>
-            </div>
-
-            <div class="divBotao">
-                <button type="submit" class="btn btn-success">Cadastrar</button>
-                <button type="reset" class="btn btn-warning">Limpar</button>
-                <a href="/DevBros/index.jsp"><button type="button" class="btn btn-danger">Cancelar</button></a>
-
-        </form>
-    </div>
-<<<<<<< HEAD
-        <div class ="divVoltar" >
-            <a href="/DevBros/menu.jsp"><button type="button">Voltar</button></a>
         </div>
-</center>
-=======
-</div>
->>>>>>> 68cc7b5aa47a77912e892539dc4d6c9e1e50533b
+    </div>
 </body>
 </html>
