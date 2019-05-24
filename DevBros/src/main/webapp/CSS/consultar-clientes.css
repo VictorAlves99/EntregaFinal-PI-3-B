@@ -1,14 +1,16 @@
 .input-group{
- 
-    position: relative;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+    width:100%;
+    padding-top: 50px;
+   
+}
+
+.input-group-append{
+    display: flex;
+    
+}
+
+.table{
     width: 100%;
-    margin-left: 40%;
-    margin-top: 100px;
     
 }

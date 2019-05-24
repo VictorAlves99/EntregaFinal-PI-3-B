@@ -63,7 +63,7 @@
             <div class="media border p-1">
                 <img src="img/mario_cliente.png" alt="Novo Cliente" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                 <div class="media-body">
-                    <h4>Cliente</h4>   
+                    <h4>Novo Cliente</h4>   
                 </div>
             </div>   
 

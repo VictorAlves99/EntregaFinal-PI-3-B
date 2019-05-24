@@ -10,6 +10,7 @@ br\DevBros\Noobies\Funcionario\Funcionario.class
 br\DevBros\Noobies\Login\Cargo.class
 br\DevBros\Noobies\Vendas\PesquisarProdutoVendasServlet.class
 br\DevBros\Noobies\Clientes\ExcluirClienteServlet.class
+br\DevBros\Noobies\Login\UsuarioSistemaService.class
 br\DevBros\Noobies\Vendas\VendasDAO.class
 br\DevBros\Noobies\Clientes\ConsultarClienteServlet.class
 br\DevBros\Noobies\Funcionario\CadastroFuncionarioServlet.class
