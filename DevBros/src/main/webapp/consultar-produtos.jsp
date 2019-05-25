@@ -75,6 +75,7 @@
 
         <form action="pesquisaProduto" method="post">
             <div class="input-group mb-3">
+                
                 <input type="text" name="pesquisa" class="form-control" placeholder="Search"> 
                 <c:if test="${not empty erroPesquisa}">
                     <div style="background-color: lightblue"><c:out value="${erroPesquisa}" /></div>
