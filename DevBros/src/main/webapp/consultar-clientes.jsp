@@ -4,7 +4,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        
+
         <title>Consulta de Clientes</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -58,22 +58,31 @@
             </ul>
         </div>
     </nav>
-        
-
-
-        <div class="container mt-3">
-            <form action="pesquisaCliente" method="post"> 
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search">                    
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">Go</button>  
-                    </div>
-                </div>
-            </form>
+    <div class="container mt-3">
+        <div class="topoPesquisa">
+            <div  class="headerPesquisa">
+            <h4>Pesquisa</h4>  
+            </div>
+            <div class="headerPesquisaNovo">
+                <button type="button" class="btn btn-success"><a class="ancora" href="/DevBros/cadastrar-clientes.jsp">+ Novo</a></button>
+            </div>
         </div>
+      
+        <form action="pesquisaCliente" method="post"> 
+            <div class="input-group mb-3">
+                <input type="text" name="pesquisa" class="form-control" placeholder="Search"> 
+                <c:if test="${not empty erroPesquisa}">
+                    <div style="background-color: lightblue"><c:out value="${erroPesquisa}" /></div>
+                </c:if>
+                <div class="input-group-append">
+                    <button class="btn btn-primary">Go</button>  
+                </div>
+            </div>
+        </form>
 
-        <div class="container">    
-        <table class="table table-striped">
+        
+    <div class="container">    
+        <table class="table table-hover">
             <thead>                     
                 <tr class="linhaPrinc">
                     <th class="tcodCliente">Id</th>
@@ -93,16 +102,14 @@
                         <td><c:out value="${cliente.telefone}" /></td>
                         <td><c:out value="${cliente.email}" /></td>
                         <td>
-
-                            <a class="ancora" href="editarcliente?codCliente=${cliente.codCliente}">                                   
-                                <button class="edit">EDITAR</button></a>
-                            <a class="ancora" href="excluirCliente?codCliente=<c:out value='${cliente.codCliente}'/>">Deletar</a>
+                            <a class="ancora" href="editarcliente?codCliente=${cliente.codCliente}"><button class="btn btn-warning">Editar</button></a>
+                            <a class="ancora" href="excluirCliente?codCliente=<c:out value='${cliente.codCliente}'/>"><button class="btn btn-danger">Deletar</button></a>
                         </td>
                     </tr>
                 </c:forEach>                    
             </tbody>
         </table>
-        
-            
+    </div>
+    </div>     
 </body>
 </html>

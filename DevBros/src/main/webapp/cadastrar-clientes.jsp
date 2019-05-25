@@ -89,7 +89,7 @@
 
                     <div class="form-group">
                         <label for="Telefone">Telefone:</label>
-                        <input type="text" class="form-control" id="Telefone" placeholder="Informe Celular (Somente números)" name="Telefone" required value="${cliente.telefone}">
+                        <input type="text" class="form-control" id="Telefone" placeholder="Informe Celular (eSomente números)" name="Telefone" required value="${cliente.telefone}">
                         <c:if test="${not empty erroTelefone}">
                             <div style="background-color: lightblue"><c:out value="${erroTelefone}" /></div>
                         </c:if>
@@ -106,12 +106,13 @@
 
                     <div class="divBotao">
                         <button type="submit" class="btn  btn-primary">Cadastrar</button>
-                        <a href="/DevBros/index.jsp"><button type="button" class="btn btn-info">Cancelar</button></a>
-                    </div>
-
+                        <a href="/DevBros/menu.jsp"><button type="button" class="btn btn-info">Cancelar</button></a>
                 </form>
             </div>
+
+
         </div>
     </div>
+</div>
 </body>
 </html>
