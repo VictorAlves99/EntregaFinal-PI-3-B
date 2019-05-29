@@ -1,60 +1,85 @@
-*{
-  margin: 0;
+html,body{
+background-image: url("img/papel_login.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
 }
 
-header{
-  width: 100%;
-  height: 100px;
-  background-color: black;
+.container{
+height: 100%;
+align-content: center;
 }
 
-header div.titulo{
-  color: white;
-  font-size: 40px;
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
 }
 
-header div img.logo{
-  height: 90px;
-  width: 90px;
-  margin-top: 5px;
-  margin-left: 10px
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
 }
 
-header div h1{
-  margin-top: -100px;
-  text-align: center;
+.social_icon span:hover{
+color: white;
+cursor: pointer;
 }
 
-hr{
-  color: black;
-  height: 3px;
-  background-color: black;
+.card-header h3{
+color: white;
 }
 
-.enfeite{
-  margin: 70px 50px;
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
 }
 
-.cadbutton{
-  background-color: #000;
-  color: white;
-  width: 200px;
-  height: 200px;
-  font-size: 20px;
-  border-radius: 100%;
-  margin: 103px -585px;
-  border: 1px solid black;
-  position: absolute;
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+color: black;
+border:0 !important;
 }
 
-.consbutton{
-  background-color: #000;
-  color: white;
-  width: 200px;
-  height: 200px;
-  font-size: 20px;
-  border-radius: 100%;
-  margin: 103px -280px;
-  border: 1px solid black;
-  position: absolute;
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+width: 100px;
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
 }
