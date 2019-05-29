@@ -1,0 +1,50 @@
+.jumbotron{
+    margin-top: 15px;
+}
+
+.jumbotron h4{
+	margin-bottom: 20px;
+}
+
+.divBotao{
+	margin-left: 82%;
+	margin-top: 30px;
+}
+
+.media-body h4{
+	margin-top: 27px;
+}
+
+.media{
+	margin-bottom: 25px;
+
+}
+
+
+#Usercampo{
+    position: absolute;
+}
+
+#PassCampo{
+    position: relative;
+    margin-left: 50%;
+}
+
+#CPFCampo{
+     position: absolute;
+}
+
+#RGCampo{
+    position: relative;
+    margin-left: 50%; 
+}
+
+#FilialCampo{
+     position: absolute;
+}
+
+#CargoCampo{
+    position: relative;
+    margin-left: 50%; 
+}
+

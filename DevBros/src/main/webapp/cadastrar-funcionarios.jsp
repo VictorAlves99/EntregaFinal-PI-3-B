@@ -102,7 +102,7 @@
                     </div>                       
         </div>
                         
-                <div class="form-group">
+                <div class="form-group"  id="datebirth">
                         <label for="datebirth">Data de Nascimento:</label>
                         <input type="date" class="form-control" id="datebirth" placeholder="Informe" name="datebirth" required value="${funcionario.datebirth}">
                         <c:if test="${not empty errodatebirth}">
@@ -142,7 +142,7 @@
                         </div> 
                                     
                                     
-                                     <div class="UserPass">   
+        <div class="UserPass">   
             <div class="form-group" id="Usercampo">
                 <label for="User">Usuário:</label>
                 <input type="text" class="form-control" id="user" placeholder="Informe usuário" name="user" required value="${funcionario.user}" style="width: 500px;">
