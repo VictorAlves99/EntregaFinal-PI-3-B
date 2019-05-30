@@ -4,8 +4,10 @@ br\DevBros\Noobies\Clientes\EditarClienteServlet.class
 br\DevBros\Noobies\Produtos\PesquisarProdutoServlet.class
 br\DevBros\Noobies\Vendas\GerarRelatorioServlet.class
 br\DevBros\Noobies\Funcionario\EditarFuncionarioServlet.class
+br\DevBros\Noobies\Login\SessaoServlet.class
 br\DevBros\Noobies\Login\AuthFilter.class
 br\DevBros\Noobies\Produtos\CadastrarProdutoServlet.class
+br\DevBros\Noobies\Login\LogoutServlet.class
 br\DevBros\Noobies\Funcionario\Funcionario.class
 br\DevBros\Noobies\Login\Cargo.class
 br\DevBros\Noobies\Vendas\PesquisarProdutoVendasServlet.class
