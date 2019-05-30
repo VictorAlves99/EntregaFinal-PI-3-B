@@ -4,10 +4,32 @@
         <servlet-name>AuthFilter</servlet-name>
         <servlet-class>br.DevBros.Noobies.Login.AuthFilter</servlet-class>
     </servlet>
+<<<<<<< HEAD
+=======
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>br.DevBros.Noobies.Login.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SessaoServlet</servlet-name>
+        <servlet-class>br.DevBros.Noobies.Login.SessaoServlet</servlet-class>
+    </servlet>
+>>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
     <servlet-mapping>
         <servlet-name>AuthFilter</servlet-name>
         <url-pattern>/AuthFilter</url-pattern>
     </servlet-mapping>
+<<<<<<< HEAD
+=======
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SessaoServlet</servlet-name>
+        <url-pattern>/SessaoServlet</url-pattern>
+    </servlet-mapping>
+>>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
     <session-config>
         <session-timeout>
             30

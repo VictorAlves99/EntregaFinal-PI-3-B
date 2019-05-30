@@ -26,7 +26,7 @@ public class CadastrarClienteServlet extends HttpServlet {
         // RECUPERA INFORMACOES DA REQUISICAO
         cliente.setNome(request.getParameter("nome")); 
         cliente.setCpf(request.getParameter("cpf"));               
-        cliente.setTelefone(request.getParameter("fone"));
+        cliente.setTelefone(request.getParameter("Telefone"));
         cliente.setEmail(request.getParameter("email"));
 
         boolean linhasAfetadas = ClienteDAO.incluirCliente(cliente);

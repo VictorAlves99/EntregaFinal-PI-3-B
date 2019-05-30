@@ -195,7 +195,7 @@ public class FuncionarioDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         
-        String sql = "SELECT * FROM tb_funcionarios";
+        String sql = "SELECT * FROM tb_funcionarios LIMIT 8";
                 
         try {
             conn = obterConexao();
@@ -203,14 +203,12 @@ public class FuncionarioDAO {
             ResultSet rs = stmt.executeQuery();
             
             while(rs.next()){
+               
                 Funcionario func = new Funcionario();
                 func.setId(rs.getInt("COD_FUNCIONARIO"));
-                func.setUsuario(rs.getString("LOGIN_SIST"));
-                func.setSenha(rs.getString("SENHA_SIST"));
                 func.setNome(rs.getString("NOME_FUNCIONARIO"));
                 func.setCpf(rs.getLong("CPF_FUNCIONARIO"));
                 func.setRg(rs.getInt("RG_FUNCIONARIO"));
-                func.setDataNascimento(new Date(rs.getDate("DATA_NASCIMENTO").getTime()));
                 func.setFilial(rs.getString("FILIAL_FUNCIONARIO"));
                 func.setCargo(rs.getString("CARGO_FUNCIONARIO"));
                 

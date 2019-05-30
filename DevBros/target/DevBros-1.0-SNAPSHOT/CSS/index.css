@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 *{
   margin: 0;
 }
@@ -58,3 +59,49 @@ hr{
   border: 1px solid black;
   position: absolute;
 }
+=======
+html,body{
+height: 90%;
+}
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(240,248,255,0.5);
+}
+
+card-body{
+    margin-top: 30px;
+    
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #007bff;
+color: black;
+border:0 !important;
+}
+
+.input-group-text img{
+    width: 20px;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.login_btn{
+    padding-top: 30px;
+color: black;
+width: 100px;
+}
+>>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585

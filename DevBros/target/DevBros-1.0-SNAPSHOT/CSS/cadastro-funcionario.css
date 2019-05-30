@@ -17,22 +17,33 @@
 
 .media{
 	margin-bottom: 25px;
+
 }
 
-#ValordaCompraform{
+
+#Usercampo{
     position: absolute;
 }
 
-#ValordaVendaform{
+#PassCampo{
     position: relative;
     margin-left: 50%;
 }
 
-#QuantidadeProd{
-    position: absolute;
+#CPFCampo{
+     position: absolute;
 }
 
-#CategoriaProd{
+#RGCampo{
     position: relative;
-     margin-left: 50%;
+    margin-left: 50%; 
+}
+
+#FilialCampo{
+     position: absolute;
+}
+
+#CargoCampo{
+    position: relative;
+    margin-left: 50%; 
 }

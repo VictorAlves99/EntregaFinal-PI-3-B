@@ -1,60 +1,44 @@
-*{
-  margin: 0;
+html,body{
+height: 90%;
 }
 
-header{
-  width: 100%;
-  height: 100px;
-  background-color: black;
+.container{
+height: 100%;
+align-content: center;
 }
 
-header div.titulo{
-  color: white;
-  font-size: 40px;
+.card{
+height: 370px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(240,248,255,0.5);
 }
 
-header div img.logo{
-  height: 90px;
-  width: 90px;
-  margin-top: 5px;
-  margin-left: 10px
+card-body{
+    margin-top: 30px;
+    
 }
 
-header div h1{
-  margin-top: -100px;
-  text-align: center;
+.input-group-prepend span{
+width: 50px;
+background-color: #007bff;
+color: black;
+border:0 !important;
 }
 
-hr{
-  color: black;
-  height: 3px;
-  background-color: black;
+.input-group-text img{
+    width: 20px;
 }
 
-.enfeite{
-  margin: 70px 50px;
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
 }
 
-.cadbutton{
-  background-color: #000;
-  color: white;
-  width: 200px;
-  height: 200px;
-  font-size: 20px;
-  border-radius: 100%;
-  margin: 103px -585px;
-  border: 1px solid black;
-  position: absolute;
-}
-
-.consbutton{
-  background-color: #000;
-  color: white;
-  width: 200px;
-  height: 200px;
-  font-size: 20px;
-  border-radius: 100%;
-  margin: 103px -280px;
-  border: 1px solid black;
-  position: absolute;
+.login_btn{
+    padding-top: 30px;
+color: black;
+width: 100px;
 }

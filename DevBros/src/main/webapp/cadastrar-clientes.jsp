@@ -24,7 +24,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Produto</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-produtos.jsp">Cadastrar</a>
-                        <a class="dropdown-item" href="/DevBros/consultar-produtos.jsp">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/consultar">Consultar</a>
                     </div>
                 </li>
 
@@ -33,7 +33,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Cliente</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-clientes.jsp">Cadastrar</a>
-                        <a class="dropdown-item" href="/DevBros/consultar-clientes.jsp">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/consultarclientes">Consultar</a>
                     </div>
                 </li>
 
@@ -41,7 +41,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Funcionario</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-funcionarios.jsp">Cadastrar</a>
-                        <a class="dropdown-item" href="/DevBros/listar-funcionarios.jsp">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/lista">Consultar</a>
                     </div>
                 </li>
 
@@ -63,7 +63,7 @@
             <div class="media border p-1">
                 <img src="img/mario_cliente.png" alt="Novo Cliente" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                 <div class="media-body">
-                    <h4>Cliente</h4>   
+                    <h4>Novo Cliente</h4>   
                 </div>
             </div>   
 
@@ -89,7 +89,7 @@
 
                     <div class="form-group">
                         <label for="Telefone">Telefone:</label>
-                        <input type="text" class="form-control" id="Telefone" placeholder="Informe Celular (Somente números)" name="Telefone" required value="${cliente.telefone}">
+                        <input type="text" class="form-control" id="Telefone" placeholder="Informe Celular (eSomente números)" name="Telefone" required value="${cliente.telefone}">
                         <c:if test="${not empty erroTelefone}">
                             <div style="background-color: lightblue"><c:out value="${erroTelefone}" /></div>
                         </c:if>
@@ -106,12 +106,13 @@
 
                     <div class="divBotao">
                         <button type="submit" class="btn  btn-primary">Cadastrar</button>
-                        <a href="/DevBros/index.jsp"><button type="button" class="btn btn-info">Cancelar</button></a>
-                    </div>
-
+                        <a href="/DevBros/menu.jsp"><button type="button" class="btn btn-info">Cancelar</button></a>
                 </form>
             </div>
+
+
         </div>
     </div>
+</div>
 </body>
 </html>

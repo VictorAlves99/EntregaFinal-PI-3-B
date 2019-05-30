@@ -1,4 +1,5 @@
 .input-group{
+<<<<<<< HEAD
  
     position: relative;
     display: -ms-flexbox;
@@ -12,3 +13,43 @@
     margin-top: 100px;
     
 }
+=======
+    display: flex;
+    padding-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+}
+
+.input-group-append{
+    display: flex;
+  
+    
+}
+
+.headerPesquisa h4{
+    position: absolute;
+    padding-left: 15px;
+}
+
+.headerPesquisaNovo button{
+    position: relative;
+    margin-left: 91%;
+}
+
+.headerPesquisaNovo a{
+    text-decoration: none;
+    color: white; 
+}
+
+.topoPesquisa{
+    margin-top: 60px;
+}
+
+.table{
+    position: flex;
+}
+
+
+    
+>>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
