@@ -5,7 +5,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Editar Produto</title>
-       
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/cadastro-produtos.css" type="text/css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Produto</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-produtos.jsp">Cadastrar</a>
-                        <a class="dropdown-item" href="/DevBros/consultar-produtos.jsp">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/consultar">Consultar</a>
                     </div>
                 </li>
 
@@ -34,7 +34,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Cliente</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-clientes.jsp">Cadastrar</a>
-                        <a class="dropdown-item" href="/DevBros/consultar-clientes.jsp">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/consultarclientes">Consultar</a>
                     </div>
                 </li>
 
@@ -42,7 +42,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Funcionario</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-funcionarios.jsp">Cadastrar</a>
-                        <a class="dropdown-item" href="/DevBros/listar-funcionarios.jsp">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/lista">Consultar</a>
                     </div>
                 </li>
 
@@ -62,9 +62,9 @@
     <div class="container">
         <div class="jumbotron">
             <div class="media border p-1">
-                <img src="img/produto_novo_2.png" alt="Novo Produto" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                <img src="img/produto_novo_2.png" alt="Editar Produto" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                 <div class="media-body">
-                    <h4>Novo Produto</h4>   
+                    <h4>Editar Produto</h4>   
                 </div>
             </div>       
 
@@ -130,11 +130,11 @@
 
                 <div class="divBotao">
                     <button type="submit" class="btn btn-primary">Alterar</button>
-                    <a href="/DevBros/consultar-produtos.jsp"><button type="button" class="btn btn-info">Cancelar</button></a>
+                    <a href="/DevBros/consultar"><button type="button" class="btn btn-info">Cancelar</button></a>
+                </div>
             </form>
         </div>
     </div>
-</div>
 
 </body>
 </html>

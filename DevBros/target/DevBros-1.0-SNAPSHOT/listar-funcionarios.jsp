@@ -27,7 +27,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Produto</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-produtos.jsp">Cadastrar</a>
-                        <a class="dropdown-item" href="/DevBros/consultar-produtos.jsp">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/consultar">Consultar</a>
                     </div>
                 </li>
 
@@ -36,7 +36,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Cliente</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-clientes.jsp">Cadastrar</a>
-                        <a class="dropdown-item" href="/DevBros/consultar-clientes.jsp">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/consultarclientes">Consultar</a>
                     </div>
                 </li>
 
@@ -44,7 +44,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Funcionario</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-funcionarios.jsp">Cadastrar</a>
-                        <a class="dropdown-item" href="/DevBros/listar-funcionarios.jsp">Consultar</a>
+                        <a class="dropdown-item" href="/DevBros/lista">Consultar</a>
                     </div>
                 </li>
 
