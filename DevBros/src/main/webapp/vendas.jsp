@@ -21,7 +21,6 @@
                 padding-top: 1px;
             }
         </style>
-
     </head>
 
     <body>
@@ -70,7 +69,6 @@
                     </tr>
                 </c:forEach> 
             </tbody>
-
             <div class="faixapgmto">
                 <div class="pgmto"><h2>Total a pagar:</h2></div>
                 <input class="pgtxt" type="text" name="pg"></input>
