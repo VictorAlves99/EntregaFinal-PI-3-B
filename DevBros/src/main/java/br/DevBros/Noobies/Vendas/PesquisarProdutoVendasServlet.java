@@ -26,22 +26,20 @@ public class PesquisarProdutoVendasServlet extends HttpServlet {
 
     private void listarProdutos(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException, ClassNotFoundException {
-        /*
+
+        int valorPesquisa = Integer.parseInt(request.getParameter("cod_produto"));
+        int quantidade = Integer.parseInt(request.getParameter("quantidadeVenda"));
+        
         Item i = new Item();
-        int quantidade = Integer.parseInt(request.getParameter("qtd"));
-        Produto produto;
-        produto = new Produto(Integer.parseInt(request.getParameter("cod_produto")));
-        i.setQuantidade(quantidade);
-        i.setProduto(produto);
-        request.setAttribute("item", i);
-        */
         
-        String valorPesquisa;
-        valorPesquisa = request.getParameter("cod_produto");
-        String quantidade = request.getParameter("quantidadeVenda");
+        List<Item> itens = VendasDAO.listarItens(valorPesquisa, quantidade);
         
-        List<Item> itens = VendasDAO.listarItens(Integer.parseInt(valorPesquisa),Integer.parseInt(quantidade));
-        request.setAttribute("listaItens",null);
+        Produto prod = new Produto(valorPesquisa);
+        ProdutoDAO.pesquisar(prod);
+        
+        i.getConta(prod, quantidade);
+        
+        request.setAttribute("valor", i);
         request.setAttribute("listaItens", itens);
         
         RequestDispatcher dispatcher = request.getRequestDispatcher("vendas.jsp");
