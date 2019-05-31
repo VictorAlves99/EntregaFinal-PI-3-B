@@ -18,6 +18,7 @@ br\DevBros\Noobies\Clientes\ConsultarClienteServlet.class
 br\DevBros\Noobies\Funcionario\CadastroFuncionarioServlet.class
 br\DevBros\Noobies\Produtos\Produto.class
 br\DevBros\Noobies\Produtos\EditarProdutoFormServlet.class
+br\DevBros\Noobies\Vendas\Item.class
 br\DevBros\Noobies\Clientes\Cliente.class
 br\DevBros\Noobies\Clientes\PesquisarClienteServlet.class
 br\DevBros\Noobies\Funcionario\ListarFuncionarioServlet.class
