@@ -1,19 +1,4 @@
 .input-group{
-<<<<<<< HEAD
- 
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    width: 100%;
-    margin-left: 40%;
-    margin-top: 100px;
-    
-}
-=======
     display: flex;
     padding-top: 50px;
     padding-left: 15px;
@@ -52,4 +37,3 @@
 
 
     
->>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585

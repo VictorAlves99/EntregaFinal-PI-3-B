@@ -114,7 +114,7 @@
 
                     <div class="form-group" id="CategoriaProd">
                         <label for="Categoria">Categoria:</label>
-                        <select name="categoria" class="form-control" style="width: 520px;">
+                        <select name="categoria" class="form-control" required style="width: 520px;">
                             <option value="">Selecione uma Categoria...</option>
                             <option value="PS4">PS4</option>
                             <option value="XBOX-ONE">XBOX ONE</option>

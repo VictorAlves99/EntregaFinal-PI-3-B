@@ -24,11 +24,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Produto</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-produtos.jsp">Cadastrar</a>
-<<<<<<< HEAD
-                        <a class="dropdown-item" href="/DevBros/consultar-produtos.jsp">Consultar</a>
-=======
                         <a class="dropdown-item" href="/DevBros/consultar">Consultar</a>
->>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
                     </div>
                 </li>
 
@@ -37,11 +33,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Cliente</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-clientes.jsp">Cadastrar</a>
-<<<<<<< HEAD
-                        <a class="dropdown-item" href="/DevBros/consultar-clientes.jsp">Consultar</a>
-=======
                         <a class="dropdown-item" href="/DevBros/consultarclientes">Consultar</a>
->>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
                     </div>
                 </li>
 
@@ -49,11 +41,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Funcionario</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/DevBros/cadastrar-funcionarios.jsp">Cadastrar</a>
-<<<<<<< HEAD
-                        <a class="dropdown-item" href="/DevBros/listar-funcionarios.jsp">Consultar</a>
-=======
                         <a class="dropdown-item" href="/DevBros/lista">Consultar</a>
->>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
                     </div>
                 </li>
 
@@ -75,11 +63,7 @@
             <div class="media border p-1">
                 <img src="img/mario_cliente.png" alt="Novo Cliente" class="mr-3 mt-3 rounded-circle" style="width:60px;">
                 <div class="media-body">
-<<<<<<< HEAD
-                    <h4>Cliente</h4>   
-=======
                     <h4>Novo Cliente</h4>   
->>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
                 </div>
             </div>   
 
@@ -105,11 +89,7 @@
 
                     <div class="form-group">
                         <label for="Telefone">Telefone:</label>
-<<<<<<< HEAD
-                        <input type="text" class="form-control" id="Telefone" placeholder="Informe Celular (Somente números)" name="Telefone" required value="${cliente.telefone}">
-=======
                         <input type="text" class="form-control" id="Telefone" placeholder="Informe Celular (eSomente números)" name="Telefone" required value="${cliente.telefone}">
->>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
                         <c:if test="${not empty erroTelefone}">
                             <div style="background-color: lightblue"><c:out value="${erroTelefone}" /></div>
                         </c:if>
@@ -126,15 +106,6 @@
 
                     <div class="divBotao">
                         <button type="submit" class="btn  btn-primary">Cadastrar</button>
-<<<<<<< HEAD
-                        <a href="/DevBros/index.jsp"><button type="button" class="btn btn-info">Cancelar</button></a>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-=======
                         <a href="/DevBros/menu.jsp"><button type="button" class="btn btn-info">Cancelar</button></a>
                 </form>
             </div>
@@ -143,6 +114,5 @@
         </div>
     </div>
 </div>
->>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
 </body>
 </html>

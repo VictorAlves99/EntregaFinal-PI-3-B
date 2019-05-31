@@ -27,44 +27,35 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Login"})
 public class LoginServlet extends HttpServlet {
 
-    private void Login(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
+    private void LoginServlet(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException, ClassNotFoundException {
-        
-        String user = request.getParameter("username");        
-        String pass = request.getParameter("password");
 
-        if(user.equals("admin")){
-            if(pass.equals("admin")){
-                RequestDispatcher dispatcher = request.getRequestDispatcher("menu.jsp");
-                dispatcher.forward(request, response);  
-            }else{
-                RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-                dispatcher.forward(request, response);  
-            }
-        }else{
-            RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
-            dispatcher.forward(request, response); 
-        }
     }
-    
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            Login("GET", request, response);
-        } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(ConsultarProdutoServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+        dispatcher.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String usuario = request.getParameter("usuario");
+        String senha = request.getParameter("senha");
+        
+        UsuarioSistemaService service = new UsuarioSistemaService();
+        
+        //Usuario usuario = null;
+         
         try {
-            Login("POST", request, response);
+            LoginServlet("POST", request, response);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(ConsultarProdutoServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         doGet(request, response);
     }
 }
+

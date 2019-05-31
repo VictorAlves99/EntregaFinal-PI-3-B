@@ -32,7 +32,7 @@ public class AuthFilter implements Filter {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/index.jsp");
             return;
         }
-        Usuario usuario = (Usuario) sessao.getAttribute("usuario");
+        Usuario usuario = (Usuario)sessao.getAttribute("usuario");
         
         if (verificarAcesso(usuario, httpRequest, httpResponse)) {
             chain.doFilter(request, response);

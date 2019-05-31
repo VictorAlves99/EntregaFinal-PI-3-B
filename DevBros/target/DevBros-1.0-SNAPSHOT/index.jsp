@@ -1,36 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Labs Login</title>
-    <link rel="stylesheet" href="CSS/login.css">
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-</head>
-<body>
-    <center>
-        <div class="div">
-            <img src="img/logo.png" alt="Logo" class="logo"><br>
-            <div>
-                <form action="Login" method="post">
-                    <div>
-                        <img src="img/iconUser.png">
-                        <input type="text" name="username" required><br><br>
-                    </div>
-                    <div>
-                        <img src="img/iconKey.png">
-                        <input type="password" name="password" required><br><br>
-                    </div>
-                    <button type="submit">Entrar</button>            
-                </form>
-            </div>
-        </div>
-    </center>
-</body>
-=======
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,14 +39,14 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><img src="img/iconUser.png"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="username">
+                                <input type="text" class="form-control" placeholder="username" name="usuario">
 
                             </div>
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><img src="img/iconKey.png"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="password">
+                                <input type="password" class="form-control" placeholder="password" name="senha">
                             </div>
 
                             <div class="form-group">
@@ -98,6 +68,5 @@
 
             </nav>
     </body>
->>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
 
 </html>
