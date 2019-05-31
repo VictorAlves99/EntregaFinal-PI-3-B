@@ -8,6 +8,7 @@ package br.DevBros.Noobies.Vendas;
 import br.DevBros.Noobies.Produtos.Produto;
 import static br.DevBros.Noobies.Utils.ConnectionUtils.obterConexao;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,6 +20,44 @@ import java.util.List;
  * @author victor.maoliveira
  */
 public class VendasDAO {
+    
+    public static void incluirVenda(Venda v){
+        PreparedStatement stmt = null;
+        Connection conn = null;
+        
+        String sql = "INSERT INTO tb_vendas (COD_PRODUTO, CPF_CLIENTE, DATA_COMPRA, VALOR_TOTAL)"
+                     + "VALUES(?, ?, ?, ?)";
+        
+        try {
+            conn = obterConexao();
+            stmt = conn.prepareStatement(sql);
+            
+            stmt.setInt(1, v.getCodProduto());
+            stmt.setString(2, v.getCpfCliente());
+            stmt.setDate(3, new Date(v.getDataCompra().getTime()));
+            stmt.setDouble(4, v.getValorTotal());
+            
+            stmt.executeUpdate();
+            
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Não foi possível executar" + e);
+        } finally{
+            if(stmt != null){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+            if(conn != null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+        }
+    }
     
     public static List<Item> listarItens(int idProd, int quant){
         
@@ -84,12 +123,12 @@ public class VendasDAO {
 
             while(rs.next()){
                 Venda venda = new Venda();
-                venda.setCOD_VENDA(rs.getInt("COD_VENDA"));
-                venda.setDATA_COMPRA(rs.getString("DATA_COMPRA"));
-                venda.setCOD_FUNCIONARIO(rs.getInt("COD_FUNCIONARIO"));
-                venda.setCPF_CLIENTE(rs.getLong("CPF_CLIENTE"));
-                venda.setCOD_PRODUTO(rs.getInt("COD_PRODUTO"));
-                venda.setVALOR_TOTAL(rs.getFloat("VALOR_TOTAL"));
+                venda.setCodVenda(rs.getInt("COD_VENDA"));
+                venda.setDataCompra(rs.getDate("DATA_COMPRA"));
+                venda.setCodFuncionario(rs.getInt("COD_FUNCIONARIO"));
+                venda.setCpfCliente(rs.getString("CPF_CLIENTE"));
+                venda.setCodProduto(rs.getInt("COD_PRODUTO"));
+                venda.setValorTotal(rs.getFloat("VALOR_TOTAL"));
                                 
                 lista.add(venda);
             }
