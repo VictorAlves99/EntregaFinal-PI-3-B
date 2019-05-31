@@ -6,12 +6,12 @@ public class Item {
     
     private Produto produto = new Produto();
     private int quantidade;
+    private double valorTotal = 0.0;
     
     public Item(){
     }
-
-    public Item(Produto prod, int quant) {
-        
+    
+    public Item(Produto prod, int quant) {    
         this.produto.setCodProduto(prod.getCodProduto());
         this.produto.setNomeProd(prod.getNomeProd());
         this.produto.setCategoria(prod.getCategoria());
@@ -34,5 +34,20 @@ public class Item {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
+
+    public double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
     
+    public double getConta(Produto prod, int quantidade){
+        return valorTotal += prod.getValorVenda() * quantidade;
+    }
+    
+    public double getContaTotal(){
+        return getConta(produto, quantidade);
+    }
 }
