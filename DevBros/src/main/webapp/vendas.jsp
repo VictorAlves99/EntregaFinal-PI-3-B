@@ -7,21 +7,6 @@
         <meta charset="UTF-8">
         <title>Venda de produtos</title>
         <link href = "CSS/vendaProdutos.css" rel = "stylesheet" type = "text/css"/>
-        <style>
-            *{
-                margin: 0px;
-            }
-            .button{
-                height: 28px;
-                width: 28px;
-                padding: 0px;
-            }
-            .button img{
-                height:22px; 
-                width: 22px; 
-                padding-top: 1px;
-            }
-        </style>
     </head>
 
     <body>
@@ -45,7 +30,7 @@
     <form action="finalizarCompra" method="post" class = "conteudo">
         <div class="quantidade">
             <label class="cpf">CPF do cliente: </label><input class="cpfTxt" type="text" name="cpfcliente">            
-            <label class="datavenda">Data de venda: </label><input class="dataTxt" type="date" name="dia">
+            <label class="datavenda">Data de venda: </label><fmt:formatDate type = "date" value = "${dia}" pattern="dd-MM-yyyy"/>
             <label class="filial">Filial: </label><input class="filialTxt" type="text" name="filialE" value="${funcionario.getFilial()}" readonly></input>
         </div>
 
