@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
@@ -38,13 +39,13 @@
         <form action="pesquisaProdVenda" method="POST">
             <label class="codigo">Código do produto: </label><input class="codigo" type="text" name="cod_produto">
             <label>Quantidade: </label><input class="quantidadeTxt" type="text" name="quantidadeVenda">
-            <button class="ok">OK</button>
+            <button submit="ok">OK</button>
         </form>
     </div>
     <form action="finalizarCompra" method="post" class = "conteudo">
         <div class="quantidade">
-            <label class="cpf">CPF do cliente: </label><input class="cpfTxt" type="text" name="cpfcliente">&nbsp;&nbsp;&nbsp;            
-            <label class="datavenda">Data de venda: </label><input class="dataTxt" type="date" name="dia"></input>
+            <label class="cpf">CPF do cliente: </label><input class="cpfTxt" type="text" name="cpfcliente">            
+            <label class="datavenda">Data de venda: </label><input class="dataTxt" type="date" name="dia">
             <label class="filial">Filial: </label><input class="filialTxt" type="text" name="filialE" value="${funcionario.getFilial()}" readonly></input>
         </div>
 
@@ -67,11 +68,12 @@
                         <td><c:out value="${item.quantidade}"/></td>
                         <td><c:out value="${item.produto.valorVenda}"/></td>
                     </tr>
-                </c:forEach> 
-            </tbody>
-            <div class="faixapgmto">
-                <div class="pgmto"><h2>Total a pagar:</h2></div>
-                <input class="pgtxt" type="text" name="pg"></input>
+                </c:forEach>
+                </tbody>
+                <div class="faixapgmto">
+                    <div class="pgto"><h2>Total a pagar:</h2></div>
+                    R$<input type="text" name="valorTotal" readonly value="${valor.getContaTotal()}"/>
+                 
                 <div class="formaspgmto">
                     <legend class="checkies">Formas de pagamento:</legend>
                     <input type="radio" name="pgto" value="Dinheiro" /> <label>Dinheiro</label>
@@ -81,7 +83,8 @@
                 <div class="botoes">
                     <button class="finalizar">FINALIZAR COMPRA</button>
                     <input type="reset" class="cancelar" value="CANCELAR COMPRA" />
-                </div>
+                </div> 
+                
             </div>
         </table>
     </form>
