@@ -5,6 +5,83 @@
     <head>
         <meta charset="UTF-8">
         <title>Cadastrar funcionários</title>
+<<<<<<< HEAD
+        <link href = "CSS/cadastro-funcionarios.css" rel = "stylesheet" type = "text/css"/>
+    </head>
+    <body>
+        <header>
+            <div class="titulo">
+                <a href="/DevBros/menu.jsp"><img src="https://i.imgur.com/1ayr6NR.png"/></a>
+                <h1>Noobies</h1>
+            </div>
+        </header>
+        <center>
+            <h1>CADASTRO DE FUNCIONÁRIOS</h1>
+            <hr>
+        </center>
+    <form action="funcionario" method="post">
+        <div class="formulario">
+            <div>
+                <label>Usuário: </label>
+                <input class="usuario" type="text" name="user" required value="${funcionario.user}">
+                
+            </div>
+            <br>
+            <div>
+                <label>Senha: </label>
+                <input class="senha" type="password" name="pass" required value="${funcionario.pass}">
+
+            </div>
+            <br>
+            <div>
+                <label>Nome: </label>
+                <input class="nome" type="text" name="name" required value="${funcionario.name}">
+
+            </div>
+            <br>
+            <div>
+                <label class = "cpf">CPF: </label>
+                <input class = "cpf" type="text" name="CPF" required value="${funcionario.CPF}">
+
+            </div>
+            <br>
+            <div>
+                <label>RG: </label>
+                <input class="rg" type="text" name="RG" required value="${funcionario.RG}">
+                
+
+                <label class = "datanasc">Data de nascimento: </label>
+                <input type="date" name="datebirth" required value="${funcionario.datebirth}">
+            </div>
+            <br>
+            <div>                
+                <label class="filial">Filial: </label>
+<!--                <input type="text" name="branch" required value="${funcionario.branch}">-->
+                <select class="filial" name="branch" required value="${funcionario.branch}">
+                  <option value="Nenhum">Selecionar...</option>
+                  <option value="SP (MATRIZ)">SP (MATRIZ)</option>
+                  <option value="Campina Grande">Campina Grande</option>
+                  <option value="Joinville">Joinville</option>
+                  <option value="Brasília">Brasília</option>
+                </select>
+                
+                <label class = "cargo">Cargo: </label>
+<!--                <input type="text" name="typeoffice" required value="${funcionario.typeoffice}">-->
+                <select class="opcoes" name="typeoffice" required value="${funcionario.typeoffice}">
+                  <option value="Nenhum">Selecionar...</option>
+                  <option value="Diretor">Diretor</option>
+                  <option value="Gerente global">Gerente global</option>
+                  <option value="Gerente regional">Gerente regional</option>
+                  <option value="Vendedor">Vendedor</option>
+                  <option value="Funcionário">Funcionário</option>
+                  <option value="Suporte técnico">Suporte técnico</option>
+                </select>
+            </div>
+            <br>
+            <button class="cadastrar" type="submit">CADASTRAR</button>
+        </div>
+    </form>    
+=======
         <link rel="stylesheet" href="CSS/cadastro-funcionario.css" type="text/css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -173,5 +250,6 @@
                   
            
                   
+>>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
     </body>
 </html>

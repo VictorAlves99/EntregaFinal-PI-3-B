@@ -1,4 +1,18 @@
 .jumbotron{
+<<<<<<< HEAD
+
+	margin-top: 60px;
+}
+
+.jumbotron h4{
+
+	margin-bottom: 20px;
+
+}
+
+.divBotao{
+
+=======
     margin-top: 15px;
 }
 
@@ -7,11 +21,16 @@
 }
 
 .divBotao{
+>>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
 	margin-left: 82%;
 	margin-top: 30px;
 }
 
 .media-body h4{
+<<<<<<< HEAD
+
+=======
+>>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
 	margin-top: 27px;
 }
 

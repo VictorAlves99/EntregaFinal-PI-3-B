@@ -5,6 +5,70 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Editar Cliente</title>
         <link href="CSS/cadastro-clientes.css" rel="stylesheet" type="text/css"/>
+<<<<<<< HEAD
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="/DevBros/menu.jsp"><img src="img/logo-simple.png"/></a>
+                <h1>Noobies</h1>
+            </div>
+        </header>
+        <br>
+        <center><h1>Alterar Cliente</h1></center>
+        <br>
+        <hr>
+        <div>
+            <form action="alterarcliente"  method="post">
+                <div class="divNome">
+                    <p>ID do Cliente:</p>
+                </div>
+                <div class="divNomeInput">
+                    <input name="codCliente" type="text" readonly value="${cliente.getcodCliente()}"/>   
+                </div>
+                <div class="divNome">
+                    <p>Nome do Cliente:</p>
+                </div>
+                <div class="divNomeInput">
+                    <input name="nome" type="text" value="${cliente.getNome()}">
+                </div>
+                    <br>
+                    <div class="divCPF">
+                    <label>CPF: </label>
+                </div>
+                <div class="divCPFInput">
+                    <input class = "cpf" type="text" name="cpf" required value="${cliente.getCpf()}">
+                    <c:if test="${not empty erroCPF}">
+                        <div style="background-color: lightcoral"><c:out value="${erroCPF}" /></div>
+                    </c:if>                
+                </div>
+                    <br>
+                <div class="divTelefone">
+                    <label>Telefone: </label>
+                </div>
+                <div class="divTelefoneInput">
+                    <input class="telefone" type="text" name="fone" value="${cliente.getTelefone()}">
+                    <c:if test="${not empty erroTelefone}">
+                        <div style="background-color: lightcoral"><c:out value="${erroTelefone}" /></div>
+                    </c:if>
+                </div>
+                <br>
+                <div class="divEmail">
+                     <label>E-mail: </label>
+                </div>
+                <div class="divEmailInput">
+                    <input class="email" type="text" name="email" value="${cliente.getEmail()}">
+                    <c:if test="${not empty erroEmail}">
+                        <div style="background-color: lightcoral"><c:out value="${erroEmail}" /></div>
+                    </c:if>
+                </div>                   
+                <br><br><br>
+                <div class="divBotao">
+                    <button type="submit">Alterar</button>
+            </form>
+        </div>
+    </body>
+=======
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -115,5 +179,6 @@
 </div>
 
 </body>
+>>>>>>> 95c528ce53c7607e7cb36353a839a3d6ebd6a585
 </html>
 
