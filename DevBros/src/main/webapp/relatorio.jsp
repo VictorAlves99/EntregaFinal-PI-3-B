@@ -86,12 +86,12 @@
          <tbody>
             <c:forEach items="${listaVendas}" var="venda">
                 <tr class="conteudo">
-                    <td><c:out value="${venda.COD_VENDA}"/></td>
-                    <td><c:out value="${venda.DATA_COMPRA}"/></td>
-                    <td><c:out value="${venda.COD_FUNCIONARIO}"/></td>
-                    <td><c:out value="${venda.CPF_CLIENTE}"/></td>
-                    <td><c:out value="${venda.COD_PRODUTO}"/></td>
-                    <td><c:out value="${venda.VALOR_TOTAL}"/></td>
+                    <td><c:out value="${venda.codVenda}"/></td>
+                    <td><c:out value="${venda.dataCompra}"/></td>
+                    <td><c:out value="${venda.codFuncionario}"/></td>
+                    <td><c:out value="${venda.cpfCliente}"/></td>
+                    <td><c:out value="${venda.codProduto}"/></td>
+                    <td><c:out value="${venda.valorTotal}"/></td>
                 </tr>
             </c:forEach>
         </tbody>

@@ -1,121 +1,122 @@
 package br.DevBros.Noobies.Vendas;
 
+import java.sql.Date;
+
 public class Venda {
     
-    private int COD_PRODUTO;
-    private int COD_VENDA;    
-    private long CPF_CLIENTE;
-    private String DATA_COMPRA; 
-    private String NOME_FUNCIONARIO;    
-    private String FILIAL;
-    private String NOME_PRODUTO;
-    private int QUANTIDADE;
-    private float VALOR_TOTAL;
-    private String FORMA_PGTO;
-    private int COD_FUNCIONARIO;
+    private int codProduto;
+    private int codVenda;    
+    private String cpfCliente;
+    private Date dataCompra; 
+    private String nomeFuncionario;    
+    private String filial;
+    private String nomeProduto;
+    private int quantidade;
+    private double valorTotal;
+    private String formaPgto;
+    private int codFuncionario;
 
-    public Venda(int COD_VENDA, long CPF_CLIENTE, String DATA_COMPRA, String NOME_FUNCIONARIO, String FILIAL, String NOME_PRODUTO, int QUANTIDADE, float VALOR_TOTAL, String FORMA_PGTO) {
-        this.COD_VENDA = COD_VENDA;
-        this.CPF_CLIENTE = CPF_CLIENTE;
-        this.DATA_COMPRA = DATA_COMPRA;
-        this.NOME_FUNCIONARIO = NOME_FUNCIONARIO;
-        this.FILIAL = FILIAL;
-        this.NOME_PRODUTO = NOME_PRODUTO;
-        this.QUANTIDADE = QUANTIDADE;
-        this.VALOR_TOTAL = VALOR_TOTAL;
-        this.FORMA_PGTO = FORMA_PGTO;
+    public Venda(int codVenda, String cpfCliente, Date dataCompra, String nomeFuncionario, String filial, String nomeProduto, int quantidade, float valorTotal, String formaPgto) {
+        this.codVenda = codVenda;
+        this.cpfCliente = cpfCliente;
+        this.dataCompra = dataCompra;
+        this.nomeFuncionario = nomeFuncionario;
+        this.filial = filial;
+        this.nomeProduto = nomeProduto;
+        this.quantidade = quantidade;
+        this.valorTotal = valorTotal;
+        this.formaPgto = formaPgto;
     }
 
     public Venda() {    
     }
 
-    public int getCOD_PRODUTO() {
-        return COD_PRODUTO;
+    public int getCodProduto() {
+        return codProduto;
     }
 
-    public void setCOD_PRODUTO(int COD_PRODUTO) {
-        this.COD_PRODUTO = COD_PRODUTO;
+    public void setCodProduto(int codProduto) {
+        this.codProduto = codProduto;
     }
 
-    public String getDATA_COMPRA() {
-        return DATA_COMPRA;
+    public Date getDataCompra() {
+        return dataCompra;
     }
 
-    public void setDATA_COMPRA(String DATA_COMPRA) {
-        this.DATA_COMPRA = DATA_COMPRA;
+    public void setDataCompra(Date dataCompra) {
+        this.dataCompra = dataCompra;
     }
 
-    public int getCOD_VENDA() {
-        return COD_VENDA;
+    public int getCodVenda() {
+        return codVenda;
     }
 
-    public void setCOD_VENDA(int COD_VENDA) {
-        this.COD_VENDA = COD_VENDA;
+    public void setCodVenda(int codVenda) {
+        this.codVenda = codVenda;
     }
 
-    public long getCPF_CLIENTE() {
-        return CPF_CLIENTE;
+    public String getCpfCliente() {
+        return cpfCliente;
     }
 
-    public void setCPF_CLIENTE(long CPF_CLIENTE) {
-        this.CPF_CLIENTE = CPF_CLIENTE;
+    public void setCpfCliente(String cpfCliente) {
+        this.cpfCliente = cpfCliente;
     }
 
-    public String getNOME_FUNCIONARIO() {
-        return NOME_FUNCIONARIO;
+    public String getNomeFuncionario() {
+        return nomeFuncionario;
     }
 
-    public void setNOME_FUNCIONARIO(String NOME_FUNCIONARIO) {
-        this.NOME_FUNCIONARIO = NOME_FUNCIONARIO;
+    public void setNomeFuncionario(String nomeFuncionario) {
+        this.nomeFuncionario = nomeFuncionario;
     }
 
-    public String getFILIAL() {
-        return FILIAL;
+    public String getFilial() {
+        return filial;
     }
 
-    public void setFILIAL(String FILIAL) {
-        this.FILIAL = FILIAL;
+    public void setFilial(String filial) {
+        this.filial = filial;
     }
 
-    public String getNOME_PRODUTO() {
-        return NOME_PRODUTO;
+    public String getNomeProduto() {
+        return nomeProduto;
     }
 
-    public void setNOME_PRODUTO(String NOME_PRODUTO) {
-        this.NOME_PRODUTO = NOME_PRODUTO;
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
     }
 
-    public int getQUANTIDADE() {
-        return QUANTIDADE;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setQUANTIDADE(int QUANTIDADE) {
-        this.QUANTIDADE = QUANTIDADE;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
     }
 
-    public float getVALOR_TOTAL() {
-        return VALOR_TOTAL;
+    public double getValorTotal() {
+        return valorTotal;
     }
 
-    public void setVALOR_TOTAL(float VALOR_TOTAL) {
-        this.VALOR_TOTAL = VALOR_TOTAL;
+    public void setValorTotal(double valorTotal) {
+        this.valorTotal = valorTotal;
     }
 
-    public String getFORMA_PGTO() {
-        return FORMA_PGTO;
+    public String getFormaPgto() {
+        return formaPgto;
     }
 
-    public void setFORMA_PGTO(String FORMA_PGTO) {
-        this.FORMA_PGTO = FORMA_PGTO;
+    public void setFormaPgto(String formaPgto) {
+        this.formaPgto = formaPgto;
     }
 
-    void setCOD_FUNCIONARIO(int COD_FUNC) {
-        this.COD_FUNCIONARIO = COD_FUNC;
+    void setCodFuncionario(int codFuncionario) {
+        this.codFuncionario = codFuncionario;
     }
 
-    public int getCOD_FUNCIONARIO() {
-        return COD_FUNCIONARIO;
+    public int getCodFuncionario() {
+        return codFuncionario;
     }
-    
-    
+
 }
