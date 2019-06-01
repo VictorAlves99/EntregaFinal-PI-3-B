@@ -7,21 +7,6 @@
         <meta charset="UTF-8">
         <title>Venda de produtos</title>
         <link href = "CSS/vendaProdutos.css" rel = "stylesheet" type = "text/css"/>
-        <style>
-            *{
-                margin: 0px;
-            }
-            .button{
-                height: 28px;
-                width: 28px;
-                padding: 0px;
-            }
-            .button img{
-                height:22px; 
-                width: 22px; 
-                padding-top: 1px;
-            }
-        </style>
     </head>
 
     <body>
@@ -45,13 +30,13 @@
     <form action="finalizarCompra" method="post" class = "conteudo">
         <div class="quantidade">
             <label class="cpf">CPF do cliente: </label><input class="cpfTxt" type="text" name="cpfcliente">            
-            <label class="datavenda">Data de venda: </label><input class="dataTxt" type="date" name="dia">
             <label class="filial">Filial: </label><input class="filialTxt" type="text" name="filialE" value="${funcionario.getFilial()}" readonly></input>
         </div>
 
         <table class="tabela">
             <thead>
                 <tr class="row">
+                    <th class="codProd">CÓDIGO DO ITEM</th>
                     <th class="codProd">CÓDIGO DO PRODUTO</th>
                     <th class="nome">NOME DO PRODUTO</th>
                     <th class="categoria">CATEGORIA</th>
@@ -62,6 +47,7 @@
             <tbody>
                 <c:forEach items="${listaItens}" var="item">
                     <tr class="conteudo">
+                        <td><c:out value="${item.idItem}"/></td>
                         <td><c:out value="${item.produto.codProduto}"/></td>
                         <td><c:out value="${item.produto.nomeProd}"/></td>
                         <td><c:out value="${item.produto.categoria}"/></td>
@@ -72,7 +58,7 @@
                 </tbody>
                 <div class="faixapgmto">
                     <div class="pgto"><h2>Total a pagar:</h2></div>
-                    R$<input type="text" name="valorTotal" readonly value="${valor.getContaTotal()}"/>
+                    R$<input type="text" name="valorTotal" readonly value="${valor}"/>
                  
                 <div class="formaspgmto">
                     <legend class="checkies">Formas de pagamento:</legend>

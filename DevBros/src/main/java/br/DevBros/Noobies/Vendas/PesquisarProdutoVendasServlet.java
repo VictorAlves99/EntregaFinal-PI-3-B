@@ -11,6 +11,7 @@ import br.DevBros.Noobies.Produtos.ProdutoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -24,6 +25,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "PesquisarProdutoVendasServlet", urlPatterns = {"/pesquisaProdVenda"})
 public class PesquisarProdutoVendasServlet extends HttpServlet {
 
+    double valorTotal = 0.0;
+    
+    List<Item> itens = new ArrayList<>();
+    
     private void listarProdutos(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException, ClassNotFoundException {
 
@@ -32,18 +37,37 @@ public class PesquisarProdutoVendasServlet extends HttpServlet {
         
         Item i = new Item();
         
-        List<Item> itens = VendasDAO.listarItens(valorPesquisa, quantidade);
+        int idItem = 0;
+        idItem++;
         
-        Produto prod = new Produto(valorPesquisa);
-        ProdutoDAO.pesquisar(prod);
+        if(itens.isEmpty()){
+            Produto prod = new Produto(valorPesquisa);
+            ProdutoDAO.pesquisar(prod);
+            Item item = VendasDAO.listarItens(idItem, prod, quantidade);
+            
+            itens.add(item);
+            
+            valorTotal += i.getConta(prod, quantidade);
+
+            request.setAttribute("valor", valorTotal);
+            request.setAttribute("listaItens", itens);
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("vendas.jsp");
+            dispatcher.forward(request, response);
+        }else{
+            Item item = VendasDAO.listarItens( 1 , valorPesquisa, quantidade);
+            itens.add(item);
+            
+            valorTotal += i.getConta(item.getProduto(), quantidade);
+
+            request.setAttribute("valor", valorTotal);
+            request.setAttribute("listaItens", itens);
+            
+
+            RequestDispatcher dispatcher = request.getRequestDispatcher("vendas.jsp");
+            dispatcher.forward(request, response);
+        }        
         
-        i.getConta(prod, quantidade);
-        
-        request.setAttribute("valor", i);
-        request.setAttribute("listaItens", itens);
-        
-        RequestDispatcher dispatcher = request.getRequestDispatcher("vendas.jsp");
-        dispatcher.forward(request, response);
     }
 
     @Override
