@@ -21,24 +21,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "PesquisarProdutoVendasServlet", urlPatterns = {"/chambra"})
+@WebServlet(name = "PesquisarProdutoVendasServlet", urlPatterns = {"/pesquisaProdVenda"})
 public class PesquisarProdutoVendasServlet extends HttpServlet {
 
     private void listarProdutos(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException, ClassNotFoundException {
-        
-        Produto p = new Produto();
+        /*
+        Item i = new Item();
         int quantidade = Integer.parseInt(request.getParameter("qtd"));
-        p.setQuantidade(quantidade);
-        request.setAttribute("prod", p);
+        Produto produto;
+        produto = new Produto(Integer.parseInt(request.getParameter("cod_produto")));
+        i.setQuantidade(quantidade);
+        i.setProduto(produto);
+        request.setAttribute("item", i);
+        */
         
         String valorPesquisa;
         valorPesquisa = request.getParameter("cod_produto");
+        String quantidade = request.getParameter("quantidadeVenda");
         
-        List<Produto> produtos = ProdutoDAO.pesquisarProduto(Integer.parseInt(valorPesquisa));
-        request.setAttribute("listaProdutos",null);
-        request.setAttribute("listaProdutos", produtos);
-               
+        List<Item> itens = VendasDAO.listarItens(Integer.parseInt(valorPesquisa),Integer.parseInt(quantidade));
+        request.setAttribute("listaItens",null);
+        request.setAttribute("listaItens", itens);
+        
         RequestDispatcher dispatcher = request.getRequestDispatcher("vendas.jsp");
         dispatcher.forward(request, response);
     }

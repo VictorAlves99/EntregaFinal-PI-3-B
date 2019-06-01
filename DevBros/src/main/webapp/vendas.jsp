@@ -21,7 +21,6 @@
                 padding-top: 1px;
             }
         </style>
-
     </head>
 
     <body>
@@ -36,13 +35,13 @@
         <hr>
     </center>
     <div class="codigoprod">
-        <form action="chambra" method="POST">
+        <form action="pesquisaProdVenda" method="POST">
             <label class="codigo">Código do produto: </label><input class="codigo" type="text" name="cod_produto">
-            <label>Quantidade: </label><input class="quantidadeTxt" type="text" name="qtd" value="${prod.qtd}">
+            <label>Quantidade: </label><input class="quantidadeTxt" type="text" name="quantidadeVenda">
             <button class="ok">OK</button>
         </form>
     </div>
-    <form action="finalizar" class = "conteudo">
+    <form action="finalizarCompra" method="post" class = "conteudo">
         <div class="quantidade">
             <label class="cpf">CPF do cliente: </label><input class="cpfTxt" type="text" name="cpfcliente">&nbsp;&nbsp;&nbsp;            
             <label class="datavenda">Data de venda: </label><input class="dataTxt" type="date" name="dia"></input>
@@ -60,17 +59,16 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${listaProdutos}" var="produto">
+                <c:forEach items="${listaItens}" var="item">
                     <tr class="conteudo">
-                        <td><c:out value="${produto.codProduto}"/></td>
-                        <td><c:out value="${produto.nomeProd}"/></td>
-                        <td><c:out value="${produto.categoria}"/></td>
-                        <td><c:out value="${prod.qtd}"/></td>
-                        <td><c:out value="${produto.valorVenda}"/></td>
+                        <td><c:out value="${item.produto.codProduto}"/></td>
+                        <td><c:out value="${item.produto.nomeProd}"/></td>
+                        <td><c:out value="${item.produto.categoria}"/></td>
+                        <td><c:out value="${item.quantidade}"/></td>
+                        <td><c:out value="${item.produto.valorVenda}"/></td>
                     </tr>
                 </c:forEach> 
             </tbody>
-
             <div class="faixapgmto">
                 <div class="pgmto"><h2>Total a pagar:</h2></div>
                 <input class="pgtxt" type="text" name="pg"></input>

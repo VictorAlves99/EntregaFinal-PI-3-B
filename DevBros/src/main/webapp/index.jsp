@@ -26,6 +26,9 @@
 
         <div class="container">
             <div class="d-flex justify-content-center h-100">
+                <c:if test="${msgErro != null}">
+                    <div><c:out value="${msgErro}" /></div>
+                </c:if>
                 <div class="card">
                     <div class="card-header">
                         <center><img src="img/logo.png"></center>
@@ -34,12 +37,12 @@
 
                     <div class="card-body">
 
-                        <form>
+                        <form action="Login" method="post">
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><img src="img/iconUser.png"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="username" name="usuario">
+                                <input type="text" class="form-control" placeholder="username" name="login">
 
                             </div>
                             <div class="input-group form-group">

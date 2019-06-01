@@ -12,16 +12,17 @@ import org.mindrot.jbcrypt.BCrypt;
 public class Usuario implements Serializable{
     private String login;  
     private String senha;
-    private List<Cargo> cargos;
+    private String hashSenha;
+    private String cargo;
 
     public Usuario(){
         
     }
-    public Usuario(String login, String nomeCompleto, String senha, List<Cargo> cargos){
+    public Usuario(String login, String nomeCompleto, String senha, String cargo){
          this.login = login;
          
          this.senha = senha;
-         this.cargos = cargos;
+         this.cargo = cargo;
     }
     public String getLogin() {
         return login;
@@ -39,15 +40,29 @@ public class Usuario implements Serializable{
         this.senha = senha;
     }
     
-    public List<Cargo> getCargo() {
-        return cargos;
+    public String getCargo() {
+        return cargo;
+    }
+    
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
-    public void setCargo(List<Cargo> cargo) {
-        this.cargos = cargo;
+    public String getHashSenha() {
+        return hashSenha;
     }
+
+    public void setHashSenha(String senha) {
+        this.hashSenha = BCrypt.hashpw(senha, BCrypt.gensalt());
+    }
+    
+    public boolean validarSenha(String senha){
+        return BCrypt.checkpw(senha, hashSenha);
+    }
+    
     public boolean verificarCargo(String nomeCargo){
-        for (Cargo c : cargos){
+        Cargo c = new Cargo();
+        {
             if(c.getNomeCargo().equals(nomeCargo)){
                 return true;
             }            

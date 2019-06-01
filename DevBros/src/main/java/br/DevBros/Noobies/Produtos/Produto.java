@@ -40,7 +40,7 @@ public class Produto {
         this.valorVenda = valorVenda;
     }
 
-    Produto(int id) {
+    public Produto(int id) {
         this.codProduto = id;
     }
     
@@ -98,9 +98,6 @@ public class Produto {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
-    }
-
-    
-    
+    } 
 }
 

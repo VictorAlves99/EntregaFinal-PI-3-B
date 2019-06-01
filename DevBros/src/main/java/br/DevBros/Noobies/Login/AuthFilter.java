@@ -23,7 +23,10 @@ public class AuthFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+    public void doFilter(ServletRequest request, 
+            ServletResponse response, FilterChain chain)
+            throws IOException, ServletException {
+        
        HttpServletRequest httpRequest = (HttpServletRequest) request;
        HttpServletResponse httpResponse = (HttpServletResponse) response;
        
@@ -40,7 +43,15 @@ public class AuthFilter implements Filter {
             httpResponse.sendRedirect(httpRequest.getContextPath() + "/erro-nao-autorizado.jsp");
         }
     }
-    private boolean verificarAcesso(Usuario usuario, HttpServletRequest request, HttpServletResponse response) {
+    private boolean verificarAcesso(Usuario usuario,
+            HttpServletRequest request, 
+            HttpServletResponse response) {
+        String paginaAcessada = request.getRequestURI();
+        if (paginaAcessada.endsWith("/menu.jsp")){
+            return true;
+        }else if (paginaAcessada.endsWith(".")&&usuario.verificarCargo("Diretor")){
+            return true;
+        }
         return false;
     }
     @Override

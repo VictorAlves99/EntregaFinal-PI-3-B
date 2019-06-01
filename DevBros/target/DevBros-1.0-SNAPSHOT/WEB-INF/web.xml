@@ -12,6 +12,10 @@
         <servlet-name>SessaoServlet</servlet-name>
         <servlet-class>br.DevBros.Noobies.Login.SessaoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DiretorServlet</servlet-name>
+        <servlet-class>br.DevBros.Noobies.Login.DiretorServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AuthFilter</servlet-name>
         <url-pattern>/AuthFilter</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>SessaoServlet</servlet-name>
         <url-pattern>/SessaoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DiretorServlet</servlet-name>
+        <url-pattern>/DiretorServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,9 +5,9 @@
  */
 package br.DevBros.Noobies.Login;
 
-import br.DevBros.Noobies.Produtos.ConsultarProdutoServlet;
-import br.DevBros.Noobies.Produtos.Produto;
-import br.DevBros.Noobies.Produtos.ProdutoDAO;
+import br.DevBros.Noobies.Login.Usuario;
+import br.DevBros.Noobies.Login.UsuarioDAO;
+import br.DevBros.Noobies.Login.UsuarioSistemaService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -19,6 +19,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -26,11 +27,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Login"})
 public class LoginServlet extends HttpServlet {
-
-    private void LoginServlet(String metodoHttp, HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException, ServletException, ClassNotFoundException {
-
-    }
 
     @Override
     protected void doGet(HttpServletRequest request,
@@ -41,19 +37,24 @@ public class LoginServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, 
+            HttpServletResponse response)
             throws ServletException, IOException {
-        String usuario = request.getParameter("usuario");
+        
+        String login = request.getParameter("login");
         String senha = request.getParameter("senha");
         
         UsuarioSistemaService service = new UsuarioSistemaService();
         
-        //Usuario usuario = null;
-         
-        try {
-            LoginServlet("POST", request, response);
-        } catch (SQLException | ClassNotFoundException ex) {
-            Logger.getLogger(ConsultarProdutoServlet.class.getName()).log(Level.SEVERE, null, ex);
+        Usuario usuario = service.buscaUsuario(login);
+        
+        if (usuario != null && usuario.validarSenha(senha)){
+            HttpSession sessao = request.getSession();
+            sessao.setAttribute("usuario", usuario);
+            response.sendRedirect("protegido/home");
+        }else{
+            request.setAttribute("msgErro", "Usuario ou senha inválidos");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
         doGet(request, response);
     }

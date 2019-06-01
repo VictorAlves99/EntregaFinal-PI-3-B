@@ -9,12 +9,12 @@ public class Venda {
     private String NOME_FUNCIONARIO;    
     private String FILIAL;
     private String NOME_PRODUTO;
-    private String QUANTIDADE;
+    private int QUANTIDADE;
     private float VALOR_TOTAL;
     private String FORMA_PGTO;
     private int COD_FUNCIONARIO;
 
-    public Venda(int COD_VENDA, long CPF_CLIENTE, String DATA_COMPRA, String NOME_FUNCIONARIO, String FILIAL, String NOME_PRODUTO, String QUANTIDADE, float VALOR_TOTAL, String FORMA_PGTO) {
+    public Venda(int COD_VENDA, long CPF_CLIENTE, String DATA_COMPRA, String NOME_FUNCIONARIO, String FILIAL, String NOME_PRODUTO, int QUANTIDADE, float VALOR_TOTAL, String FORMA_PGTO) {
         this.COD_VENDA = COD_VENDA;
         this.CPF_CLIENTE = CPF_CLIENTE;
         this.DATA_COMPRA = DATA_COMPRA;
@@ -26,8 +26,7 @@ public class Venda {
         this.FORMA_PGTO = FORMA_PGTO;
     }
 
-    Venda() {
-    
+    public Venda() {    
     }
 
     public int getCOD_PRODUTO() {
@@ -86,11 +85,11 @@ public class Venda {
         this.NOME_PRODUTO = NOME_PRODUTO;
     }
 
-    public String getQUANTIDADE() {
+    public int getQUANTIDADE() {
         return QUANTIDADE;
     }
 
-    public void setQUANTIDADE(String QUANTIDADE) {
+    public void setQUANTIDADE(int QUANTIDADE) {
         this.QUANTIDADE = QUANTIDADE;
     }
 

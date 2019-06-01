@@ -2,6 +2,7 @@ package br.DevBros.Noobies.Login;
 
 import static br.DevBros.Noobies.Utils.ConnectionUtils.obterConexao;
 import br.DevBros.Noobies.Login.Usuario;
+import br.DevBros.Noobies.Utils.ConnectionUtils;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,42 +14,40 @@ import java.sql.SQLException;
  */
 public class UsuarioDAO {
 
-    public static Usuario buscaUsuario(Usuario u) {
+    public static Usuario buscaUsuario(String usuario) throws SQLException {
+        
         PreparedStatement stmt = null;
         Connection conn = null;
 
-        String sql = "SELECT LOGIN_SIST, SENHA_SIST FROM DB_LOJA_NOOBIES.TB_FUNCIONARIOS WHERE LOGIN_SIST = ?";
+        String sql = "SELECT LOGIN_SIST, SENHA_SIST, CARGO_FUNCIONARIO FROM DB_LOJA_NOOBIES.TB_FUNCIONARIOS WHERE LOGIN_SIST = ?";
 
         try {
-            conn = obterConexao();
+            conn = ConnectionUtils.obterConexao();
             stmt = conn.prepareStatement(sql);
 
-            stmt.setString(1, u.getLogin());
+            stmt.setString(1, usuario);
 
             ResultSet rs = stmt.executeQuery();
-
+            
+            
             while (rs.next()) {
-                String login = rs.getString("LOGIN_SIST");
-                String senha = rs.getString("SENHA_SIST");
+                Usuario u = new Usuario();
+                u.setLogin(rs.getString("LOGIN_SIST"));
+                u.setSenha(rs.getString("SENHA_SIST"));
+                u.setCargo(rs.getString("CARGO_FUNCIONARIO"));
+                
+                return u;
             }
         } catch (ClassNotFoundException | SQLException e) {
-            System.out.println("Não foi possível executar" + e);
+            return null;
         } finally {
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException e) {
-                    
-                }
+            if (stmt != null && !stmt.isClosed()){
+                stmt.close();
             }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException e) {
-                    
-                }
+            if (conn != null && !conn.isClosed()){
+                conn.close();
             }
         }
-        return u;
+        return null;
     }
 }
