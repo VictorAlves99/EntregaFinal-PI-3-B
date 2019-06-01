@@ -26,6 +26,7 @@ br\DevBros\Noobies\Utils\ConnectionUtils.class
 br\DevBros\Noobies\Clientes\CadastrarClienteServlet.class
 br\DevBros\Noobies\Funcionario\DesativarFuncionarioServlet.class
 br\DevBros\Noobies\Login\Usuario.class
+br\DevBros\Noobies\Vendas\DataAtualServlet.class
 br\DevBros\Noobies\Funcionario\PesquisarFuncionarioServlet.class
 br\DevBros\Noobies\Login\LoginServlet.class
 br\DevBros\Noobies\Produtos\EditarProdutoServlet.class

@@ -1,0 +1,37 @@
+#Dados{
+    margin-left: auto;
+    margin-auto: auto;
+}
+
+#formasDepagamento{
+    margin-top: 300px;
+
+}
+
+#tabelaProduto{
+   margin-top: 30px;
+   width: 95%;
+}
+.th{
+    width: 100%;
+    size: 100%;
+}
+.td{
+    width: 100%;
+}
+
+#cdProd{
+    position: absolute;
+    padding-left: 20px;
+}
+
+#QtdProd{
+    position: relative;
+    margin-left: 42%;
+}
+
+.divBotaoAdd{
+    margin-left: 82%;
+    margin-top: -35px;
+
+}
