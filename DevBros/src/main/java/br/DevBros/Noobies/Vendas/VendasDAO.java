@@ -59,13 +59,12 @@ public class VendasDAO {
         }
     }
     
-    public static List<Item> listarItens(int idProd, int quant){
-        
-        List<Item> lista = new ArrayList<>();
+    public static Item listarItens(int idItem, Produto produto, int quant){
+        Item item = null;
         PreparedStatement stmt = null;
         Connection conn = null;
         
-        String sql = "SELECT * FROM tb_produtos WHERE COD_PRODUTO LIKE '%"+idProd+"%';";
+        String sql = "SELECT * FROM tb_produtos WHERE COD_PRODUTO LIKE '%"+produto.getCodProduto()+"%' LIMIT 1;";
                 
         try {
             conn = obterConexao();
@@ -73,7 +72,6 @@ public class VendasDAO {
 
             ResultSet rs = stmt.executeQuery();
             
-
             while(rs.next()){
                 Produto prod = new Produto();
                 prod.setCodProduto(rs.getInt("COD_PRODUTO"));
@@ -81,9 +79,7 @@ public class VendasDAO {
                 prod.setValorVenda(rs.getDouble("VALOR_VENDA"));
                 prod.setCategoria(rs.getString("CATEGORIA"));
                 
-                Item item = new Item(prod, quant);
-                
-                lista.add(item);
+                item = new Item(1,prod, quant);
             }
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println("Não foi possível executar" + e);
@@ -103,8 +99,50 @@ public class VendasDAO {
                 }
             }
         }
+        return item;
+    }
+    
+    public static Item listarItens(int idItem, int cod, int quant){
+        Item item = null;
+        PreparedStatement stmt = null;
+        Connection conn = null;
         
-        return lista;
+        String sql = "SELECT * FROM tb_produtos WHERE COD_PRODUTO LIKE '%"+cod+"%' LIMIT 1;";
+                
+        try {
+            conn = obterConexao();
+            stmt = conn.prepareStatement(sql);
+
+            ResultSet rs = stmt.executeQuery();
+            
+            while(rs.next()){
+                Produto prod = new Produto();
+                prod.setCodProduto(rs.getInt("COD_PRODUTO"));
+                prod.setNomeProd(rs.getString("NOME_PRODUTO"));
+                prod.setValorVenda(rs.getDouble("VALOR_VENDA"));
+                prod.setCategoria(rs.getString("CATEGORIA"));
+                
+                item = new Item(prod, quant);
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Não foi possível executar" + e);
+        } finally{
+            if(stmt != null){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+            if(conn != null){
+                try {
+                    conn.close();
+                } catch (SQLException e) {
+                    System.out.println("Erro ao fechar conexão" + e);
+                }
+            }
+        }
+        return item;
     }
     
     public static List<Venda> pesquisarVendas(String inicio, String fim){
