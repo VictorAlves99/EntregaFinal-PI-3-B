@@ -28,7 +28,7 @@
 }
 
 .topoPesquisa{
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .table{
@@ -36,4 +36,6 @@
 }
 
 
-    
+.jumbotron{
+       margin-top: 15px;
+}    

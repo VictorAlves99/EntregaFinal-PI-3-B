@@ -59,15 +59,35 @@
             </ul>
         </div>
     </nav>
-
-
+    
+    <div class="container">
+        <div class="jumbotron">
+            
+                 <div class="topoPesquisa">
+            <div  class="headerPesquisa">
+            <h4>Pesquisa</h4>  
+            </div>
+            <div class="headerPesquisaNovo">
+                <button type="button" class="btn btn-success"><a class="ancora" href="/DevBros/vendas.jsp">+ Novo</a></button>
+            </div>
+        </div>
+            
+            
     <form action="gerarRelatorio">
         <div class="form-group">
+            <div id="De">
             <label for="De">De:</label>
-            <input type="date" class="form-control" name="inicio" required>
+            <input type="date" class="form-control" name="inicio" required style="width: 400px;">
+            </div>
+            
+            <div id="Ate">
             <label for="À">à:</label>
-            <input type="date" class="form-control" name="fim" required>
-            <button type="submit" class="btn btn-primary">Go</button>
+            <input type="date" class="form-control" name="fim" required style="width: 400px;">     
+            </div>
+            
+              <div class="divPesquisa">
+                    <button type="submit" class="btn btn-primary">Pesquisar</button>
+                </div>
         </div>
     </form>
     
@@ -97,7 +117,9 @@
         </tbody>
         </table>
         
-    </div> 
+    </div>
+        </div>
+    </div>        
     
 </body>
 </html>

@@ -28,9 +28,13 @@
 }
 
 .topoPesquisa{
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .table{
     position: flex;
+}
+
+.jumbotron{
+       margin-top: 15px;
 }

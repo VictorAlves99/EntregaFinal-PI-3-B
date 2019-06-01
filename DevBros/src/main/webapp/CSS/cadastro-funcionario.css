@@ -11,16 +11,6 @@
 	margin-top: 30px;
 }
 
-.media-body h4{
-	margin-top: 27px;
-}
-
-.media{
-	margin-bottom: 25px;
-
-}
-
-
 #Usercampo{
     position: absolute;
 }
@@ -47,3 +37,4 @@
     position: relative;
     margin-left: 50%; 
 }
+

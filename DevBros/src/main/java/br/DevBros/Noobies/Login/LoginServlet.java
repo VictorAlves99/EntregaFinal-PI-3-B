@@ -28,7 +28,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Login"})
 public class LoginServlet extends HttpServlet {
 
-    @Override
+  /*  @Override
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
@@ -58,5 +58,6 @@ public class LoginServlet extends HttpServlet {
         }
         doGet(request, response);
     }
+*/
 }
 
