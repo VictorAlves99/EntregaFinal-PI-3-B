@@ -12,23 +12,22 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  
-        
+
     </head>
     <body>       
 
 
         <nav class="navbar navbar-expand-sm  bg-light ">
             <img src="img/logo-simple.png" alt="Logo" style="width:50px;">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item dropdown">                        
-                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">                         
-                                    <c:out value="${sessionScope.usuario.cargo}" />
-                            </a>                                     
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/DevBros/index.jsp">Sair</a>
-                        </div>
-                    </li> 
-                </ul>
+            <ul class="nav navbar-nav">
+                <li class="nav-item dropdown">                        
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        ${sessionScope.usuario.cargo}</a>                                     
+                    <div class="dropdown-menu">
+                        <a href="${pageContext.request.contextPath}/logout">Sair</a>
+                    </div>
+                </li> 
+            </ul>
         </nav>
 
         <div class="card-deck mb-4">
@@ -40,7 +39,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Clientes</h4>
                         <p class="card-text">Cadastro e Consulta de Clientes</p>
-                             <a href="/DevBros/cadastrar-clientes.jsp" class="btn btn-primary">Go</a>
+                        <a href="/DevBros/cadastrar-clientes.jsp" class="btn btn-primary">Go</a>
                     </div>
                 </div>
             </div>

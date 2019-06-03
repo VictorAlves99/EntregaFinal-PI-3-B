@@ -135,8 +135,7 @@
                                     <option value="Diretor">Diretor</option>
                                     <option value="Gerente global">Gerente global</option>
                                     <option value="Gerente regional">Gerente regional</option>
-                                    <option value="Vendedor">Vendedor</option>
-                                    <option value="Funcionário">Funcionário</option>
+                                    <option value="Vendedor">Vendedor</option>                                  
                                     <option value="Suporte técnico">Suporte técnico</option>
                                 </select>
                             </div> 
