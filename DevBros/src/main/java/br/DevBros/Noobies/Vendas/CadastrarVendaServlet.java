@@ -6,6 +6,7 @@
 package br.DevBros.Noobies.Vendas;
 
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +22,18 @@ public class CadastrarVendaServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        
+        Venda venda = new Venda();
+        
+        venda.setValorTotal(Float.parseFloat(request.getParameter("valorTotal")));
+        venda.setFormaPgto(request.getParameter("pgto"));
+        
+        VendasDAO.incluirVenda(venda);
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/sucesso.jsp");
+        dispatcher.forward(request, response);
+        
+        
     }
 
     @Override

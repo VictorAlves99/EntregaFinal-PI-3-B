@@ -25,17 +25,15 @@ public class VendasDAO {
         PreparedStatement stmt = null;
         Connection conn = null;
         
-        String sql = "INSERT INTO tb_vendas (COD_PRODUTO, CPF_CLIENTE, DATA_COMPRA, VALOR_TOTAL)"
-                     + "VALUES(?, ?, ?, ?)";
+        String sql = "INSERT INTO tb_vendas (VALOR_TOTAL, FORMA_PGTO)"
+                     + "VALUES(?, ?)";
         
         try {
             conn = obterConexao();
             stmt = conn.prepareStatement(sql);
             
-            stmt.setInt(1, v.getCodProduto());
-            stmt.setString(2, v.getCpfCliente());
-            stmt.setDate(3, new Date(v.getDataCompra().getTime()));
-            stmt.setDouble(4, v.getValorTotal());
+            stmt.setDouble(1, v.getValorTotal());
+            stmt.setString(2, "Dinheiro");
             
             stmt.executeUpdate();
             
@@ -161,12 +159,9 @@ public class VendasDAO {
 
             while(rs.next()){
                 Venda venda = new Venda();
-                venda.setCodVenda(rs.getInt("COD_VENDA"));
                 venda.setDataCompra(rs.getDate("DATA_COMPRA"));
-                venda.setCodFuncionario(rs.getInt("COD_FUNCIONARIO"));
-                venda.setCpfCliente(rs.getString("CPF_CLIENTE"));
-                venda.setCodProduto(rs.getInt("COD_PRODUTO"));
                 venda.setValorTotal(rs.getFloat("VALOR_TOTAL"));
+                venda.setFormaPgto(rs.getString("FORMA_PGTO"));
                                 
                 lista.add(venda);
             }

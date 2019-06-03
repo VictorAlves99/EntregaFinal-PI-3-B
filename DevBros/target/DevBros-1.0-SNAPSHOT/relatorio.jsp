@@ -73,7 +73,7 @@
         </div>
             
             
-    <form action="gerarRelatorio">
+    <form action="gerarRelatorio" method="post">
         <div class="form-group">
             <div id="De">
             <label for="De">De:</label>
@@ -84,10 +84,8 @@
             <label for="À">à:</label>
             <input type="date" class="form-control" name="fim" required style="width: 400px;">     
             </div>
-            
-              <div class="divPesquisa">
-                    <button type="submit" class="btn btn-primary">Pesquisar</button>
-                </div>
+            <br>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary">Pesquisar</button>
         </div>
     </form>
     
@@ -95,23 +93,17 @@
         <table class="table table-hover">
           <thead>
             <tr>
-                <th>Código Venda</th>
-                <th>Data da Compra</th>
-                <th>Código User</th>
-                <th>CPF Cliente</th>
-                <th>Código Produto</th>
                 <th>Valor total</th>
+                <th>Forma de Pagamento</th>
+                <th>Data da Compra</th>
             </tr>
         </thead>
          <tbody>
             <c:forEach items="${listaVendas}" var="venda">
                 <tr class="conteudo">
-                    <td><c:out value="${venda.codVenda}"/></td>
-                    <td><c:out value="${venda.dataCompra}"/></td>
-                    <td><c:out value="${venda.codFuncionario}"/></td>
-                    <td><c:out value="${venda.cpfCliente}"/></td>
-                    <td><c:out value="${venda.codProduto}"/></td>
                     <td><c:out value="${venda.valorTotal}"/></td>
+                    <td><c:out value="${venda.formaPgto}"/></td>
+                    <td><c:out value="${venda.dataCompra}"/></td>
                 </tr>
             </c:forEach>
         </tbody>
