@@ -61,7 +61,9 @@
             </ul>
         </div>
     </nav>
-
+        
+        <div class="container">
+            <div class="jumbotron">
     <div class="container mt-3">
         <div class="topoPesquisa">
             <div  class="headerPesquisa">
@@ -122,5 +124,7 @@
             </table>
         </div>
     </div>
+            </div>
+        </div>
 </body>
 </html>

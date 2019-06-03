@@ -63,7 +63,7 @@
     <div class="container">
         <div class="jumbotron">
             <div class="media border p-1">
-                <img src="img/produto_novo_2.png" alt="Novo Produto" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+                <img src="img/produto_novo_2.png" alt="Novo Produto" class="mr-2 mt-2 rounded-circle" style="width:60px;">
                 <div class="media-body">
                     <h4>Novo Produto</h4>   
                 </div>
