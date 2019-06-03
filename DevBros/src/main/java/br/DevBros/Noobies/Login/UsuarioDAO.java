@@ -14,7 +14,7 @@ import java.sql.SQLException;
  */
 public class UsuarioDAO {
 
-    public static Usuario buscaUsuario(String usuario) throws SQLException {
+    public static Usuario buscaUsuario(String usuario) throws SQLException{
         
         PreparedStatement stmt = null;
         Connection conn = null;

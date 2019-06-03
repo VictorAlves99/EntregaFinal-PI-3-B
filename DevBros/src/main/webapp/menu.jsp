@@ -19,26 +19,15 @@
         <nav class="navbar navbar-expand-sm  bg-light ">
             <img src="img/logo-simple.png" alt="Logo" style="width:50px;">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item dropdown">
-                        <c:if test="${sessionScope.usuario.verificarCargo('Diretor')}">
-                            <li><a href="${pageContext.request.contextPath}/protegido/diretor">Diretor</a></li>
-                        </c:if>
-                        <c:if test="${sessionScope.usuario.verificarCargo('Gerente Global')}">
-                            <li><a href="${pageContext.request.contextPath}/protegido/gerente-global">Gerente Global</a></li>
-                        </c:if>
-                        <c:if test="${sessionScope.usuario.verificarCargo('Gerente Regional')}">
-                            <li><a href="${pageContext.request.contextPath}/protegido/gerente-regional">Gerente Regional</a></li>
-                        </c:if>
-                        <c:if test="${sessionScope.usuario.verificarCargo('Vendedor')}">
-                            <li><a href="${pageContext.request.contextPath}/protegido/vendedor">Vendedor</a></li>
-                        </c:if>
-                        <c:if test="${sessionScope.usuario.verificarCargo('Suporte Tecnico')}">
-                            <li><a href="${pageContext.request.contextPath}/protegido/suporte-tecnico">Suporte Tecnico</a></li>
-                        </c:if>
+                    <li class="nav-item dropdown">                        
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">                         
+                                    <c:out value="${sessionScope.usuario.cargo}" />
+                            </a>                                     
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/DevBros/index.jsp">Sair</a>
                         </div>
-                    </li> <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">User</a>
+                    </li> 
+                </ul>
         </nav>
 
         <div class="card-deck mb-4">

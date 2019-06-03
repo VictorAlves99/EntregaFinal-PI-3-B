@@ -1,6 +1,7 @@
 package br.DevBros.Noobies.Login;
 
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.List;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -12,13 +13,12 @@ import org.mindrot.jbcrypt.BCrypt;
 public class Usuario implements Serializable{
     private String login;  
     private String senha;
-    private String hashSenha;
     private String cargo;
 
     public Usuario(){
         
     }
-    public Usuario(String login, String nomeCompleto, String senha, String cargo){
+    public Usuario(String login, String senha, String cargo){
          this.login = login;
          
          this.senha = senha;
@@ -47,19 +47,15 @@ public class Usuario implements Serializable{
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
-
-    public String getHashSenha() {
-        return hashSenha;
+  
+    public boolean validarSenha(String senha) throws SQLException{
+        UsuarioDAO user = new UsuarioDAO();
+        Usuario u = user.buscaUsuario(getLogin());
+        if(senha.equals(u.senha)){
+            return true;
+        }
+        return false;
     }
-
-    public void setHashSenha(String senha) {
-        this.hashSenha = BCrypt.hashpw(senha, BCrypt.gensalt());
-    }
-    
-    public boolean validarSenha(String senha){
-        return BCrypt.checkpw(senha, hashSenha);
-    }
-    
     public boolean verificarCargo(String nomeCargo){
         Cargo c = new Cargo();
         {

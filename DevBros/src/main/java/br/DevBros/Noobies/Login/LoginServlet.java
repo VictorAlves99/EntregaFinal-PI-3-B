@@ -29,34 +29,38 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request,
-            HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-        dispatcher.forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, 
+    protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
-        
+
         UsuarioSistemaService service = new UsuarioSistemaService();
-        
-        Usuario usuario = service.buscaUsuario(login);
-        
-        if (usuario != null && usuario.validarSenha(senha)){
-            HttpSession sessao = request.getSession();
-            sessao.setAttribute("usuario", usuario);
-            response.sendRedirect("protegido/home");
-        }else{
-            request.setAttribute("msgErro", "Usuario ou senha inválidos");
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+
+        Usuario usuario = new Usuario();
+        try {
+            usuario = service.buscaUsuario(login);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        doGet(request, response);
+        try {
+            if (usuario.validarSenha(senha)) {
+                HttpSession sessao = request.getSession();
+                sessao.setAttribute("usuario", usuario);
+                response.sendRedirect("protegido/home");
+            } else {
+                request.setAttribute("msgErro", "Usuario ou senha inválidos");
+                request.getRequestDispatcher("/index.jsp").forward(request, response);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
-

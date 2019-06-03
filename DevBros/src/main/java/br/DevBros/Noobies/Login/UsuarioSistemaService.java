@@ -10,7 +10,7 @@ import java.util.Arrays;
  */
 public class UsuarioSistemaService {
     
-    public Usuario buscaUsuario(String u)throws SQLException{
+    public Usuario buscaUsuario(String u) throws SQLException{
         return UsuarioDAO.buscaUsuario(u); 
     }
 }

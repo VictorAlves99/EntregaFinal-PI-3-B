@@ -6,7 +6,6 @@
 package br.DevBros.Noobies.Login;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +19,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name="LogoutServlet", urlPatterns = {"/logout"})
 public class LogoutServlet extends HttpServlet {
+    
     private void process(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
