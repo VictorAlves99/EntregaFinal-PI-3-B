@@ -51,6 +51,8 @@ public class AuthFilter implements Filter {
             return true;
         }else if (paginaAcessada.endsWith(".")&&usuario.verificarCargo("Diretor")){
             return true;
+        }else if (paginaAcessada.endsWith(".")&&usuario.verificarCargo("Vendedor")){
+            return true;
         }
         return false;
     }

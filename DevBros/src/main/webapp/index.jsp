@@ -42,14 +42,14 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><img src="img/iconUser.png"><i class="fas fa-user"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="username" name="login">
+                                <input type="text" class="form-control" autocomplete="off" placeholder="username" name="login">
 
                             </div>
                             <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><img src="img/iconKey.png"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" class="form-control" placeholder="password" name="senha">
+                                <input type="password" class="form-control" autocomplete="off" placeholder="password" name="senha">
                             </div>
 
                             <div class="form-group">

@@ -28,14 +28,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Login"})
 public class LoginServlet extends HttpServlet {
 
-<<<<<<< HEAD
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-=======
-  /*  @Override
-    protected void doGet(HttpServletRequest request,
-            HttpServletResponse response)
->>>>>>> 75637833b620776e052b63396db86ea10f622890
+    protected void doGet(HttpServletRequest request,HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
@@ -60,7 +54,7 @@ public class LoginServlet extends HttpServlet {
             if (usuario.validarSenha(senha)) {
                 HttpSession sessao = request.getSession();
                 sessao.setAttribute("usuario", usuario);
-                response.sendRedirect("protegido/home");
+                response.sendRedirect("menu.jsp");
             } else {
                 request.setAttribute("msgErro", "Usuario ou senha inválidos");
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -69,5 +63,5 @@ public class LoginServlet extends HttpServlet {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-*/
+
 }

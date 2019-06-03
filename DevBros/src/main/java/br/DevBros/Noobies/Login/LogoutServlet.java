@@ -17,24 +17,26 @@ import javax.servlet.http.HttpSession;
  *
  * @author nathan.osantos
  */
-@WebServlet(name="LogoutServlet", urlPatterns = {"/logout"})
+@WebServlet("logout")
 public class LogoutServlet extends HttpServlet {
-    
+
     private void process(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession sessao = request.getSession();
         sessao.invalidate();
-        response.sendRedirect("login");
+        response.sendRedirect(request.getContextPath() + "/index.jsp");
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
         process(request, response);
     }
-   @Override
-   protected void doPost(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException{
-       process(request, response);
-   }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            process(request, response);
+    }
 
 }
