@@ -28,14 +28,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "LoginServlet", urlPatterns = {"/Login"})
 public class LoginServlet extends HttpServlet {
 
-<<<<<<< HEAD
-      @Override
-    protected void doGet(HttpServletRequest request,
-            HttpServletResponse response)
-=======
     @Override
     protected void doGet(HttpServletRequest request,HttpServletResponse response)
->>>>>>> 9f5a39fc168d053017e1105438223b578c2874d1
             throws ServletException, IOException {
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
@@ -69,8 +63,4 @@ public class LoginServlet extends HttpServlet {
             Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9f5a39fc168d053017e1105438223b578c2874d1
 }
